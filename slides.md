@@ -1204,6 +1204,20 @@ layout: center
 </div>
 
 ---
+layout: center
+---
+
+# Демо токенізації: EN vs UA
+
+<div class="w-full h-[82vh] mt-2">
+  <img src="/platform.openai.com_tokenizer.png" alt="OpenAI Tokenizer" class="h-full w-full object-contain rounded-lg border border-gray-500 border-opacity-30" />
+</div>
+
+<div class="mt-3 text-sm text-center">
+  <a href="https://platform.openai.com/tokenizer" target="_blank" class="text-blue-400 hover:underline">platform.openai.com/tokenizer</a>
+</div>
+
+---
 
 # Порівняння цін: API (pay-per-use)
 
