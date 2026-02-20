@@ -111,6 +111,50 @@ layout: section
 </div>
 
 ---
+
+# Різні моделі ціноутворення
+
+<div class="mt-6 grid grid-cols-3 gap-6 text-sm">
+
+<div class="p-4 bg-white bg-opacity-5 rounded-lg border border-gray-500 border-opacity-20">
+
+### 1) GitHub Copilot<br>Premium Requests
+
+- Платите підписку
+- Далі — пакет/ліміт premium-запитів
+- Підходить для стабільного навантаження в IDE
+
+</div>
+
+<div class="p-4 bg-white bg-opacity-5 rounded-lg border border-gray-500 border-opacity-20">
+
+### 2) Cursor<br>Per tokens
+
+- Витрати залежать від input/output токенів
+- Довгі чати й великі контексти = вищий чек
+- Підходить для гнучкої автоматизації та агентів
+
+</div>
+
+<div class="p-4 bg-white bg-opacity-5 rounded-lg border border-gray-500 border-opacity-20">
+
+### 3) Claude Code<br>Subscription + limits
+
+- Фіксована підписка
+- Але є практичні ліміти використання
+- Підходить для щоденної розробки в передбачуваному бюджеті
+
+</div>
+
+</div>
+
+<div class="mt-5 text-xs opacity-60">
+
+Висновок: перед вибором інструмента важливо розуміти, за що саме ви платите — за запити, за токени чи за підписку з лімітами.
+
+</div>
+
+---
 layout: center
 ---
 
@@ -1295,6 +1339,58 @@ layout: center
 
 ---
 
+# RTK — Rust Token Killer
+
+**Проблема:** CLI-виводи (git, npm, docker...) захаращують контекст агента сотнями зайвих токенів.
+
+<div class="grid grid-cols-2 gap-8 mt-6">
+
+<div>
+
+### Що робить RTK
+
+<v-clicks>
+
+- CLI-проксі, що стискає вивід команд **перед** тим як вони потраплять в контекст AI
+- Підключається через hook — команди переписуються прозоро
+- Підтримує 30+ команд: `git`, `cargo`, `npm`, `docker`, `kubectl`
+- Працює з Claude Code, Cursor, Aider, Gemini CLI
+
+</v-clicks>
+
+</div>
+
+<div>
+
+### Результат
+
+<v-clicks>
+
+- **89%** середнє скорочення токенів на CLI-виводах
+- Сесії тривають **~3x** довше на тих самих лімітах
+- **~70%** економія на токен-bills для pay-per-use
+- Встановлення — кілька секунд, налаштування — нуль
+
+</v-clicks>
+
+<div v-click class="mt-4 p-3 bg-green-500 bg-opacity-10 rounded-lg text-sm">
+
+`git status` → `rtk git status` → у контекст потрапляє лише важлива частина
+
+</div>
+
+</div>
+
+</div>
+
+<div v-click class="mt-4 text-xs opacity-50 text-right">
+
+[rtk-ai.app](https://www.rtk-ai.app/) · open source, MIT
+
+</div>
+
+---
+
 # AI для тестувальників
 
 <div class="mt-6">
@@ -1679,6 +1775,7 @@ spec/ → requirements.md → design.md → tasks.md
 - [claude.ai](https://claude.ai) — Claude
 - [v0.dev](https://v0.dev) — UI Generation
 - [bolt.new](https://bolt.new) — Full-stack AI
+- [rtk-ai.app](https://www.rtk-ai.app/) — Token Killer для CLI
 
 </div>
 
