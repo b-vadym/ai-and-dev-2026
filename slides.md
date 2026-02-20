@@ -9,6 +9,7 @@ drawings:
   persist: false
 transition: slide-left
 mdc: true
+lineNumbers: false
 ---
 
 # AI & Development in 2026
@@ -24,6 +25,12 @@ mdc: true
 <div class="abs-br m-6 flex gap-2">
   <span class="text-sm opacity-50">Лютий 2026</span>
 </div>
+
+<!--
+Вітаю всіх! Сьогодні поговоримо про те, як AI змінює нашу щоденну роботу розробника прямо зараз — не в майбутньому.
+Покажу конкретні інструменти, практики та підводні камені. Будуть реальні приклади з виробничих проектів.
+Наприкінці — час для питань і дискусії.
+-->
 
 ---
 layout: center
@@ -58,8 +65,64 @@ class: text-center
   <a href="https://x.com/karpathy/status/1617979122625712128" class="text-xs opacity-30 mt-2 block">x.com/karpathy</a>
 </div>
 
+<!--
+97% — це майже всі. Хто з вас вже використовує AI щодня? (пауза для рук)
+78% компаній — це не стартапи, це Enterprise. Рішення прийнято на рівні CTO.
+55% швидше — не означає "пишемо менше коду". Означає "вирішуємо більше проблем за той самий час".
+Karpathy — один з творців GPT-4. Якщо він каже "English is the new programming language" — це не метафора.
+-->
+
+---
+layout: center
+class: text-center
+---
+
+# Програма
+
+<div class="grid grid-cols-2 gap-x-16 gap-y-3 mt-10 text-left max-w-2xl mx-auto">
+
+<div class="flex items-baseline gap-3">
+  <span class="text-2xl font-bold opacity-20">01</span>
+  <span class="text-sm">Еволюція від ChatGPT до AI-агентів</span>
+</div>
+<div class="flex items-baseline gap-3">
+  <span class="text-2xl font-bold opacity-20">02</span>
+  <span class="text-sm">Vibe Coding та Agentic Engineering</span>
+</div>
+<div class="flex items-baseline gap-3">
+  <span class="text-2xl font-bold opacity-20">03</span>
+  <span class="text-sm">Контекст-інжиніринг</span>
+</div>
+<div class="flex items-baseline gap-3">
+  <span class="text-2xl font-bold opacity-20">04</span>
+  <span class="text-sm">Рейтинги моделей та бенчмарки</span>
+</div>
+<div class="flex items-baseline gap-3">
+  <span class="text-2xl font-bold opacity-20">05</span>
+  <span class="text-sm">Інфраструктура: MCP, Rules, Memory</span>
+</div>
+<div class="flex items-baseline gap-3">
+  <span class="text-2xl font-bold opacity-20">06</span>
+  <span class="text-sm">Ціноутворення та ROI</span>
+</div>
+<div class="flex items-baseline gap-3">
+  <span class="text-2xl font-bold opacity-20">07</span>
+  <span class="text-sm">QA та безпека</span>
+</div>
+<div class="flex items-baseline gap-3">
+  <span class="text-2xl font-bold opacity-20">08</span>
+  <span class="text-sm">AI Code Review в CI/CD</span>
+</div>
+<div class="flex items-baseline gap-3">
+  <span class="text-2xl font-bold opacity-20">09</span>
+  <span class="text-sm">Spec-Driven Development</span>
+</div>
+
+</div>
+
 ---
 layout: section
+transition: fade
 ---
 
 # Еволюція: від ChatGPT до AI-агентів
@@ -174,6 +237,13 @@ layout: center
 
 </div>
 
+<!--
+Хто чув термін "vibe coding"? (пауза)
+Karpathy описує підхід "дай AI промпт і не думай про код взагалі".
+Це ОК для прототипів та learning. Але не для production.
+Далі покажу чому — і що ми робимо натомість.
+-->
+
 ---
 layout: center
 class: text-center
@@ -255,6 +325,13 @@ layout: center
 - Потребує наставника (вас!)
 - Може зробити щось "технічно правильно, але не так як треба"
 
+<!--
+Аналогія з стажером найкраще пояснює модель взаємодії.
+Ваша роль не "писати код" — ваша роль "reviewer та архітектор".
+Питання до аудиторії: чи змінює це вашу роль у команді? (так, але на краще)
+Human in the Loop — це не обмеження, це best practice.
+-->
+
 </div>
 
 </div>
@@ -263,6 +340,7 @@ layout: center
 
 ---
 layout: section
+transition: fade
 ---
 
 # Context Engineering
@@ -510,6 +588,7 @@ Anthropic: "Find the <span class="text-blue-400 font-bold">smallest possible set
 
 ---
 layout: section
+transition: fade
 ---
 
 # Рейтинги та бенчмарки моделей
@@ -573,7 +652,37 @@ class: text-center
 
 # Які бувають агенти для розробки?
 
-<img src="/img/agent-types.png" class="mx-auto rounded-lg shadow-xl" style="max-height: 380px;" />
+<div class="grid grid-cols-2 gap-6 mt-8 text-left max-w-3xl mx-auto">
+
+<div class="p-4 bg-blue-500 bg-opacity-10 rounded-xl border border-blue-500 border-opacity-30">
+  <div class="text-lg font-bold mb-2">🖥️ IDE-агенти</div>
+  <div class="text-xs opacity-60 mb-2 uppercase tracking-wide">Human in the Loop</div>
+  <div class="text-sm opacity-80">Cursor · GitHub Copilot · Windsurf</div>
+  <div class="text-xs opacity-50 mt-2">Щоденна розробка, ви контролюєте кожен крок</div>
+</div>
+
+<div class="p-4 bg-green-500 bg-opacity-10 rounded-xl border border-green-500 border-opacity-30">
+  <div class="text-lg font-bold mb-2">💻 CLI-агенти</div>
+  <div class="text-xs opacity-60 mb-2 uppercase tracking-wide">Terminal</div>
+  <div class="text-sm opacity-80">Claude Code · Aider · Gemini CLI</div>
+  <div class="text-xs opacity-50 mt-2">CI/CD, batch-операції, автоматизація</div>
+</div>
+
+<div class="p-4 bg-purple-500 bg-opacity-10 rounded-xl border border-purple-500 border-opacity-30">
+  <div class="text-lg font-bold mb-2">🎨 Спеціалізовані</div>
+  <div class="text-xs opacity-60 mb-2 uppercase tracking-wide">Domain-specific</div>
+  <div class="text-sm opacity-80">v0.dev · Bolt.new · Figma AI</div>
+  <div class="text-xs opacity-50 mt-2">Прототипи, UI mockups, швидкий MVP</div>
+</div>
+
+<div class="p-4 bg-orange-500 bg-opacity-10 rounded-xl border border-orange-500 border-opacity-30">
+  <div class="text-lg font-bold mb-2">🤖 Автономні</div>
+  <div class="text-xs opacity-60 mb-2 uppercase tracking-wide">Cloud / Background</div>
+  <div class="text-sm opacity-80">Devin · Copilot Workspace · Background Agents</div>
+  <div class="text-xs opacity-50 mt-2">Довгі задачі, паралельна робота</div>
+</div>
+
+</div>
 
 ---
 
@@ -633,6 +742,7 @@ class: text-center
 </div>
 ---
 layout: section
+transition: fade
 ---
 
 # Інфраструктура AI-агентів
@@ -663,6 +773,12 @@ graph LR
 - Open source, підтримується всіма великими гравцями
 
 </div>
+
+<!--
+MCP — це Game changer для enterprise. Замість n інтеграцій (Cursor→Jira, Copilot→Jira...) — один MCP сервер.
+Якщо у вас є внутрішні системи (Confluence, корпоративний Git, БД) — MCP дозволяє підключити їх до будь-якого агента.
+Anthropic відкрили специфікацію, тому конкуренти теж підтримують: OpenAI, Google.
+-->
 
 ---
 
@@ -728,6 +844,7 @@ graph LR
 
 ---
 layout: section
+transition: fade
 ---
 
 # Rules & Instructions
@@ -1163,11 +1280,18 @@ memory-bank/
 
 ---
 layout: section
+transition: fade
 ---
 
 # Скільки це коштує?
 
 Ціни, підписки та ROI
+
+<!--
+Найчастіше питання від менеджерів: "скільки це коштує?"
+Відповідь: залежить від моделі використання. Покажу три підходи.
+Головне: навіть $20/міс окупається якщо заощаджує 1 годину на тиждень.
+-->
 
 ---
 
@@ -1541,6 +1665,7 @@ AI — це не тільки для розробників. QA отримує �
 
 ---
 layout: section
+transition: fade
 ---
 
 # AI Code Review у CI/CD
@@ -1736,6 +1861,7 @@ layout: center
 
 ---
 layout: section
+transition: fade
 ---
 
 # Цікавий тренд: Spec-Driven Development
@@ -1917,6 +2043,12 @@ spec/ → requirements.md → design.md → tasks.md
 
 </div>
 
+<!--
+SDD — практичний наступний крок для команди. Починайте не з усього проекту.
+Спробуйте на одній фічі в наступному спринті: напишіть spec.md до того як починати промптити.
+Різниця відчутна вже після першої спроби — менше "а я мав на увазі інше".
+-->
+
 ---
 
 # Корисні посилання
@@ -1970,7 +2102,7 @@ AI не замінює розробників.<br/>
 
 <div class="text-left text-sm opacity-70 mt-4">
 
-- **Slides:** github.com/your-repo
+- **Slides:** b-vadym.github.io/ai-in-dev-2026
 - **LinkedIn:** linkedin.com/in/vadym
 - **Email:** vadym@company.com
 
@@ -1980,20 +2112,20 @@ AI не замінює розробників.<br/>
 
 <div class="flex flex-col items-center justify-center">
 
-<div class="w-48 h-48 bg-white rounded-lg flex items-center justify-center text-center p-4">
-  <div>
-    <div class="text-sm font-bold text-gray-800 mb-2">QR Code</div>
-    <div class="text-xs text-gray-600">Презентація доступна за посиланням</div>
-  </div>
-</div>
+<QrLink value="https://b-vadym.github.io/ai-in-dev-2026/" :size="180" />
 
-<div class="text-xs opacity-60 mt-3">github.com/your-repo</div>
+<div class="text-xs opacity-60 mt-3">b-vadym.github.io/ai-in-dev-2026</div>
 
 </div>
 
 </div>
 
 <div class="mt-6 text-sm opacity-40">
-  Вадим — Tech Lead | Лютий 2026
+  Вадим | Лютий 2026
 </div>
 
+<!--
+Дякую за увагу! Слайди доступні за QR-кодом або посиланням.
+Час для питань — що вас найбільше зацікавило?
+Теми для дискусії: які інструменти вже пробували? які проблеми стикалися?
+-->
