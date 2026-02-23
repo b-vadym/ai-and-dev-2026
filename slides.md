@@ -98,9 +98,9 @@ transition: fade
 
 <div v-click>
 
-### 2023 — GitHub Copilot
-- AI з'явився в IDE
-- Автодоповнення + чат
+### 2023 — IDE-інтеграція
+- Copilot Chat, CodeWhisperer, IntelliJ AI
+- AI-чат прямо в редакторі — новий стандарт
 - Контекст = поточний файл
 
 </div>
