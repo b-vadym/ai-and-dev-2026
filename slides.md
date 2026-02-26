@@ -366,6 +366,55 @@ layout: center
 
 ---
 
+# Агент не пам'ятає вас
+
+<div class="grid grid-cols-2 gap-8 mt-6">
+
+<div class="p-4 bg-red-500 bg-opacity-10 rounded-lg">
+
+### Кожна нова сесія — чистий аркуш
+
+<v-clicks>
+
+- Не знає вашого стеку
+- Не знає конвенцій команди
+- Не знає що вже обговорювали
+- Не знає які файли не чіпати
+
+</v-clicks>
+
+<div v-click class="mt-4 text-sm italic opacity-60">
+
+"Знову пояснюю що у нас Symfony і не треба використовувати Laravel-підходи..."
+
+</div>
+
+</div>
+
+<div>
+
+### Як вирішували це спочатку
+
+<v-clicks>
+
+- Копіювати контекст вручну щоразу
+- Починати кожен чат з довгого опису проекту
+- Сподіватися що AI "здогадається"
+
+</v-clicks>
+
+<div v-click class="mt-6 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-sm">
+
+**Рішення:** файли з інструкціями які читаються автоматично при кожній сесії
+
+</div>
+
+</div>
+
+</div>
+
+---
+
 # Rules & Instructions: контекст на автопілоті
 
 <div class="grid grid-cols-2 gap-6 mt-4">
