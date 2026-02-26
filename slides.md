@@ -244,14 +244,22 @@ transition: fade
 
 # Context Engineering
 
-<div class="grid grid-cols-2 gap-6 mt-6">
+Від "як попросити" до "що показати AI"
+
+---
+layout: center
+---
+
+# Чому Context Engineering?
+
+<div class="grid grid-cols-2 gap-6 mt-6 max-w-3xl mx-auto">
 
 <div class="p-4 bg-white bg-opacity-5 rounded-xl border border-gray-500 border-opacity-20">
   <div class="flex items-center gap-2 text-xs opacity-50 mb-2">
     <span class="font-bold">@karpathy</span> · 2025
   </div>
   <div class="text-sm">I think the word "prompt engineering" is grossly over-indexed. The real skill is <span class="text-blue-400 font-bold">context engineering</span> — the art of filling the context window with just the right information for the next step.</div>
-  <a href="https://x.com/karpathy/status/1886192184808149383" class="text-xs opacity-30 mt-2 block">x.com/karpathy</a>
+  <a href="https://x.com/karpathy/status/2019137879310836075" class="text-xs opacity-30 mt-2 block">x.com/karpathy</a>
 </div>
 
 <div class="p-4 bg-white bg-opacity-5 rounded-xl border border-gray-500 border-opacity-20">
@@ -269,37 +277,45 @@ transition: fade
 
 # Prompt Engineering vs Context Engineering
 
-<div class="grid grid-cols-2 gap-12 mt-8">
+<div class="grid grid-cols-2 gap-8 mt-8">
 
-<div>
+<div class="p-4 bg-gray-500 bg-opacity-10 rounded-xl border border-gray-500 border-opacity-20">
 
 ### Prompt Engineering (2023)
 
 <v-clicks>
 
-- Фокус на формулюванні запиту
-- "Як правильно попросити AI"
+- Фокус на **одному запиті**
+- "Як краще сформулювати питання"
 - Один промпт → одна відповідь
-- Трюки: "Think step by step", "Act as expert"
+- Трюки: "Think step by step", "Act as senior dev"
+- Знання: **у формулюванні промпту**
 
 </v-clicks>
 
 </div>
 
-<div>
+<div class="p-4 bg-blue-500 bg-opacity-10 rounded-xl border border-blue-500 border-opacity-30">
 
 ### Context Engineering (2025-2026)
 
 <v-clicks>
 
-- Фокус на всьому, що AI "бачить"
-- "Як правильно налаштувати середовище AI"
-- Системний промпт + правила + файли + історія
-- Структура проекту, конвенції, приклади
+- Фокус на **всьому що AI бачить**
+- "Що показати AI і що приховати"
+- System prompt + rules + файли + пам'ять + MCP
+- Структура проекту, конвенції, приклади коду
+- Знання: **в налаштуванні середовища**
 
 </v-clicks>
 
 </div>
+
+</div>
+
+<div v-click class="mt-6 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-sm text-center">
+
+**Той самий промпт + кращий контекст = значно кращий результат** — без зміни моделі
 
 </div>
 
@@ -307,18 +323,18 @@ transition: fade
 
 # Що входить в контекст AI-агента
 
-<div class="grid grid-cols-2 gap-8 mt-4">
+<div class="grid grid-cols-2 gap-8 mt-6">
 
 <div>
 
 <v-clicks>
 
-- **System Prompt** — базові інструкції
-- **Rules & Instructions** — правила проекту
-- **Файли проекту** — код, конфіги
-- **Історія діалогу** — попередні повідомлення
-- **MCP Tools** — доступні інструменти
-- **Memory / Notes** — нотатки між сесіями
+- 🧠 **System Prompt** — базові інструкції та роль
+- 📋 **Rules & Instructions** — правила проекту (CLAUDE.md)
+- 📁 **Файли проекту** — код, конфіги, схеми
+- 💬 **Історія діалогу** — попередні повідомлення
+- 🔧 **MCP Tools** — доступні інструменти та API
+- 🗒️ **Memory / Notes** — нотатки між сесіями
 
 </v-clicks>
 
@@ -326,8 +342,8 @@ transition: fade
 
 <div class="flex items-center justify-center">
 <div class="text-center">
-  <div class="text-3xl font-mono font-bold text-blue-400">Якість =<br/>Модель × Контекст</div>
-  <div class="text-sm opacity-50 mt-3">Навіть найкраща модель дасть поганий результат з поганим контекстом</div>
+  <div v-click class="text-4xl font-mono font-bold text-blue-400 mb-4">Якість =<br/>Модель × Контекст</div>
+  <div v-click class="text-sm opacity-60 mt-2 max-w-xs">Навіть найкраща модель дасть поганий результат з поганим контекстом</div>
 </div>
 </div>
 
