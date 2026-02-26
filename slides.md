@@ -351,6 +351,21 @@ layout: center
 
 ---
 
+# System Prompt: невидима основа
+
+Кожен AI-інструмент має прихований системний промпт — сотні рядків інструкцій, які формують його поведінку.
+<div class="mt-4 relative">
+  <img src="/system-promt.png" class="w-full object-cover object-top rounded-lg" style="max-height: 320px;" />
+</div>
+
+<div class="mt-2 text-xs opacity-40">
+
+🔗 [github.com/x1xhlol/system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)
+
+</div>
+
+---
+
 # Context Engineering: дві крайнощі
 
 <div class="grid grid-cols-2 gap-8 mt-8">
