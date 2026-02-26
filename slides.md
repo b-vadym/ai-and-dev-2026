@@ -366,6 +366,60 @@ layout: center
 
 ---
 
+# Rules & Instructions: контекст на автопілоті
+
+<div class="grid grid-cols-2 gap-6 mt-4">
+
+<div>
+
+### Де зберігаються
+
+```
+my-project/
+├── CLAUDE.md               ← Claude Code
+└── .github/
+    ├── copilot-instructions.md  ← Copilot
+    └── instructions/
+        ├── general.instructions.md  ← *
+        ├── php.instructions.md      ← **/*.php
+        └── tests.instructions.md    ← **/*Test.php
+```
+
+<div class="text-xs opacity-50 mt-2">Більшість інструментів підтримують glob-патерни — різні правила для різних файлів і папок</div>
+
+</div>
+
+<div>
+
+### Приклад файлів з `applyTo`
+
+```markdown
+---
+applyTo: "**/*.php"
+---
+## Stack
+Symfony 7, PHP 8.3, API Platform, PostgreSQL
+
+## Conventions
+- snake_case for DB columns
+- Assert attributes for validation
+- Never use var_dump or die()
+
+---
+applyTo: "**/*Test.php"
+---
+## Testing
+- PHPUnit with data providers
+- Mock external services, never real HTTP
+- AAA: Arrange / Act / Assert
+```
+
+</div>
+
+</div>
+
+---
+
 # Context Engineering: дві крайнощі
 
 <div class="grid grid-cols-2 gap-8 mt-8">
