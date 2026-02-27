@@ -1166,9 +1166,9 @@ description: Написати функціональні тести контро
 ---
 Напиши функціональні тести для цього контролера.
 
-- Використай WebTestCase (Symfony)
+- Використай ApiTestCase
 - Покрий: 200, 400, 401, 403, 404
-- Mock зовнішніх сервісів через $this->createMock()
+- Використовуй DataProvider
 - Назви методів: test<Action><Scenario>
   напр. testCreateUserReturns201()
 - Запусти після: ./vendor/bin/phpunit
