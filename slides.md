@@ -1804,6 +1804,14 @@ glab mr note "${CI_MERGE_REQUEST_IID}" \
 </div>
 
 ---
+layout: center
+---
+
+<div class="flex justify-center h-full items-center">
+  <img src="/img/tweet-cursor-saas.png" class="max-h-[40vh] max-w-[32vw] object-contain rounded-xl shadow-xl" />
+</div>
+
+---
 
 # Best Practices для команди
 
