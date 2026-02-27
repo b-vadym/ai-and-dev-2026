@@ -1304,45 +1304,53 @@ applyTo: "**/*Test.php"
 
 # Rules — не завжди достатньо
 
-Rules і instructions вирішують базову проблему, але мають обмеження:
+<div class="grid grid-cols-3 gap-4 mt-5 text-sm">
 
-<div class="grid grid-cols-2 gap-8 mt-6">
+<div v-click class="p-3 bg-red-500 bg-opacity-10 rounded-xl border border-red-500 border-opacity-20">
 
-<div class="p-4 bg-red-500 bg-opacity-10 rounded-lg">
+### Прив'язані до проекту
 
-### Проблеми rules файлів
-
-<v-clicks>
-
-- Завжди в контексті — навіть коли не потрібні
-- Статичний текст — немає логіки чи кроків
-- Не можуть виконувати дії самостійно
-- Одна велика каша — важко підтримувати
-
-</v-clicks>
+Живуть у `.cursor/rules` або `.github/copilot-instructions.md` — **не переносяться** між проектами без ручного копіювання
 
 </div>
 
-<div class="p-4 bg-blue-500 bg-opacity-10 rounded-lg">
+<div v-click class="p-3 bg-orange-500 bg-opacity-10 rounded-xl border border-orange-500 border-opacity-20">
 
-### Що потрібно для складних задач
+### Vendor lock-in
 
-<v-clicks>
+Cursor, Copilot, Claude Code — у кожного **свій формат** і місце зберігання. Написане для одного не працює в іншому
 
-- Покрокові інструкції для конкретного сценарію
-- Контекст завантажується лише коли потрібен
-- Вбудовані знання про проект і конвенції
-- Перевикористання між проектами
+</div>
 
-</v-clicks>
+<div v-click class="p-3 bg-yellow-500 bg-opacity-10 rounded-xl border border-yellow-500 border-opacity-20">
+
+### Статичний контекст
+
+Завжди в промті навіть коли не потрібні. Немає логіки, кроків, умов. При зростанні — **важко підтримувати**
+
+</div>
+
+<div v-click class="p-3 bg-purple-500 bg-opacity-10 rounded-xl border border-purple-500 border-opacity-20">
+
+### Застарівають непомітно
+
+Архітектура змінилась — rules залишились старі. AI слідує **застарілим інструкціям**, ніхто не помічає
+
+</div>
+
+<div v-click class="p-3 bg-pink-500 bg-opacity-10 rounded-xl border border-pink-500 border-opacity-20">
+
+### Конфлікти між правилами
+
+При великій кількості rules вони можуть **суперечити одне одному**. AI не знає що пріоритетніше
 
 </div>
 
 </div>
 
-<div v-click class="mt-6 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-sm text-center">
+<div v-click class="mt-6 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-sm text-center border border-blue-500 border-opacity-20">
 
-**Рішення:** Skills — модульні пакети знань для агента
+**Рішення:** Skills — модульні, переносні пакети знань для агента
 
 </div>
 
