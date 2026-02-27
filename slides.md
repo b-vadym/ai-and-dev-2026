@@ -543,23 +543,13 @@ layout: center
 
 ---
 
-# Довший контекст = гірший результат
+# Context Rot — більше контексту не означає краще
 
-<div class="grid grid-cols-2 gap-8 mt-6 items-center">
 
-<div>
 
-<img src="https://research.trychroma.com/img/context_rot/hero_plot.png" class="w-full rounded-lg" />
-<div class="text-xs opacity-30 mt-1"><a href="https://research.trychroma.com/context-rot" target="_blank">research.trychroma.com/context-rot</a></div>
-
-</div>
-
-<div class="p-6 bg-red-500 bg-opacity-10 rounded-xl border border-red-500 border-opacity-30 text-2xl leading-relaxed">
-
-Більше контексту<br/>≠<br/>кращий результат
-
-</div>
-
+<div class="flex flex-col items-center mt-4">
+  <img src="/img/context-rot.png" class="max-h-[38vh] object-contain rounded-lg" />
+  <div class="text-xs opacity-30 mt-2"><a href="https://research.trychroma.com/context-rot" target="_blank">research.trychroma.com/context-rot</a></div>
 </div>
 
 ---
