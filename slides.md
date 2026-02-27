@@ -585,11 +585,9 @@ layout: center
 
 ---
 
-# Context Rot — довший контекст = гірший результат
+# Довший контекст = гірший результат
 
-Дослідження Chroma (2025): продуктивність моделей **суттєво падає** зі збільшенням контексту.
-
-<div class="grid grid-cols-2 gap-6 mt-4">
+<div class="grid grid-cols-2 gap-8 mt-6 items-center">
 
 <div>
 
@@ -598,25 +596,9 @@ layout: center
 
 </div>
 
-<div class="text-sm">
+<div class="p-6 bg-red-500 bg-opacity-10 rounded-xl border border-red-500 border-opacity-30 text-2xl leading-relaxed">
 
-### Що знайшли (18 моделей: GPT-4.1, Claude 4, Gemini 2.5...)
-
-<v-clicks>
-
-- Фокусований контекст (~300 токенів) vs повний (~113k) — **разюча різниця**
-- При **10 000 словах** деградація різко зростає у всіх моделей
-- Навіть один "відволікаючий" елемент знижує точність
-- Парадокс: **перемішаний** контекст обробляється краще ніж логічно структурований
-
-</v-clicks>
-
-<div v-click class="mt-4 p-3 bg-red-500 bg-opacity-10 rounded-lg text-xs border border-red-500 border-opacity-20">
-
-Більше контексту ≠ кращий результат.<br/>
-Моделі не читають контекст рівномірно — увага розсіюється.
-
-</div>
+Більше контексту<br/>≠<br/>кращий результат
 
 </div>
 
