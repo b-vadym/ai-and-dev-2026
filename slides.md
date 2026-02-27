@@ -192,50 +192,36 @@ layout: center
 </div>
 
 ---
-layout: center
----
 
-# Human in the Loop
+# Agent Loop — як агент думає і діє
 
-```mermaid
-graph LR
-    H1["👤 Ви<br/>Ставите задачу"] --> AI["🤖 AI Agent<br/>Планує і виконує"]
-    AI --> H2["👤 Ви<br/>Переглядаєте"]
-    H2 -->|"✅ OK"| Done["✔ Merge / Deploy"]
-    H2 -->|"🔄 Правки"| AI
-    style H1 fill:#3b82f6,stroke:#2563eb,color:#fff
-    style H2 fill:#3b82f6,stroke:#2563eb,color:#fff
-    style AI fill:#7c3aed,stroke:#6d28d9,color:#fff
-    style Done fill:#059669,stroke:#047857,color:#fff
-```
+<div class="grid grid-cols-2 gap-8 mt-4 items-center">
 
-<div class="grid grid-cols-3 gap-4 mt-6">
-
-<div class="p-3 bg-blue-500 bg-opacity-10 rounded-lg text-center">
-  <div class="text-2xl mb-1">🎯</div>
-  <div class="font-bold text-blue-400 text-sm">Ви — архітектор</div>
-  <div class="text-xs opacity-60 mt-1">Задача, напрямок, пріоритети</div>
+<div>
+<img src="https://code.visualstudio.com/assets/docs/copilot/core-concepts/agent-loop.png" class="w-full rounded-lg" />
+<div class="text-xs opacity-30 mt-2"><a href="https://code.visualstudio.com/docs/copilot/core-concepts#_agent-loop" target="_blank">code.visualstudio.com — GitHub Copilot Core Concepts</a></div>
 </div>
 
-<div class="p-3 bg-purple-500 bg-opacity-10 rounded-lg text-center">
-  <div class="text-2xl mb-1">⚡</div>
-  <div class="font-bold text-purple-400 text-sm">AI — виконавець</div>
-  <div class="text-xs opacity-60 mt-1">Код, тести, документація</div>
-</div>
+<div class="text-sm">
 
-<div class="p-3 bg-green-500 bg-opacity-10 rounded-lg text-center">
-  <div class="text-2xl mb-1">✅</div>
-  <div class="font-bold text-green-400 text-sm">Ви — reviewer</div>
-  <div class="text-xs opacity-60 mt-1">Approve або корекція напрямку</div>
+<v-clicks>
+
+- **Understand** — читає файли, шукає по кодбейсу, вивчає документацію
+- **Act** — редагує код, виконує команди, встановлює залежності, викликає API
+- **Validate** — запускає тести, перевіряє помилки компілятора, ревьюає зміни
+- Якщо щось не так — **ітерує** знову
+
+</v-clicks>
+
+<div v-click class="mt-6 p-3 bg-blue-500 bg-opacity-10 rounded-lg border border-blue-500 border-opacity-20">
+
+Агент сам вирішує скільки ітерацій потрібно. Ти можеш зупинити, додати контекст або перенаправити в будь-який момент.
+
 </div>
 
 </div>
 
-<!--
-Ключова ідея: навіть коли AI виконує роботу автономно — ви завжди в циклі.
-Ваша роль змінюється: не "писати код", а "ставити задачі і review".
-Це не обмеження — це best practice. Питання: чи змінює це вашу роль? (так, на краще)
--->
+</div>
 
 ---
 layout: center
@@ -268,7 +254,6 @@ Claude Code побудував **distributed agent orchestration system** при
 </div>
 
 ---
-
 layout: section
 transition: fade
 ---
