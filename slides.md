@@ -1046,6 +1046,12 @@ VS Code Copilot: вбудована тула <code>#fetch &lt;url&gt;</code> —
 </div>
 
 ---
+layout: section
+---
+
+# Memory
+
+---
 
 # Агент не пам'ятає вас
 
@@ -1083,12 +1089,6 @@ VS Code Copilot: вбудована тула <code>#fetch &lt;url&gt;</code> —
 - Сподіватися що AI "здогадається"
 
 </v-clicks>
-
-<div v-click class="mt-6 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-sm">
-
-**Рішення:** файли з інструкціями які читаються автоматично при кожній сесії
-
-</div>
 
 </div>
 
