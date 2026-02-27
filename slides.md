@@ -18,7 +18,7 @@ lineNumbers: false
 
 <div class="pt-12">
   <span class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Вадим
+    Вадим Бондаренко
   </span>
 </div>
 
@@ -2182,8 +2182,6 @@ AI не замінює розробників.<br/>
 <div class="text-left text-sm opacity-70 mt-4">
 
 - **Slides:** b-vadym.github.io/ai-in-dev-2026
-- **LinkedIn:** linkedin.com/in/vadym
-- **Email:** vadym@company.com
 
 </div>
 
@@ -2200,7 +2198,7 @@ AI не замінює розробників.<br/>
 </div>
 
 <div class="mt-6 text-sm opacity-40">
-  Вадим | Лютий 2026
+  Вадим Бондаренко | Лютий 2026
 </div>
 
 <!--
