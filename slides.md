@@ -2173,20 +2173,6 @@ AI не замінює розробників.<br/>
 Розробники з AI замінюють розробників без AI.
 </div>
 
-<div class="grid grid-cols-2 gap-12 mt-8 max-w-3xl mx-auto">
-
-<div>
-
-### 📧 Контакти
-
-<div class="text-left text-sm opacity-70 mt-4">
-
-- **Slides:** b-vadym.github.io/ai-in-dev-2026
-
-</div>
-
-</div>
-
 <div class="flex flex-col items-center justify-center">
 
 <QrLink value="https://b-vadym.github.io/ai-in-dev-2026/" :size="180" />
@@ -2195,7 +2181,6 @@ AI не замінює розробників.<br/>
 
 </div>
 
-</div>
 
 <div class="mt-6 text-sm opacity-40">
   Вадим Бондаренко | Лютий 2026
