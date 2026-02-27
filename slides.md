@@ -73,6 +73,68 @@ Karpathy — один з творців GPT-4. Якщо він каже "English
 -->
 
 ---
+layout: center
+---
+
+# "За 1 годину те, що команда робила рік"
+
+<div class="mt-8 max-w-2xl mx-auto">
+
+<div class="p-6 bg-white bg-opacity-5 rounded-xl border border-gray-500 border-opacity-20">
+
+<div class="text-sm opacity-50 mb-4">Jaana Dogan · Principal Engineer @ Google</div>
+
+<div class="text-xl leading-relaxed mb-4">
+
+Claude Code побудував **distributed agent orchestration system** приблизно за годину — задачу, над якою команда Google працювала **рік без результату**.
+
+</div>
+
+<div class="text-base opacity-70 italic">
+
+"Quality and efficiency gains in this domain are beyond what anyone could have imagined so far."
+
+</div>
+
+</div>
+
+<div class="text-xs opacity-30 mt-4 text-center"><a href="https://the-decoder.com/google-engineer-says-claude-code-built-in-one-hour-what-her-team-spent-a-year-on/" target="_blank">the-decoder.com</a></div>
+
+</div>
+
+---
+layout: center
+---
+
+# Уточнення · Update Jan 4, 2026
+
+<div class="mt-6 max-w-2xl mx-auto">
+
+<div class="p-6 bg-white bg-opacity-5 rounded-xl border border-gray-500 border-opacity-20 text-sm">
+
+<div class="text-xs opacity-50 mb-4">Jaana Dogan · уточнила наступного дня</div>
+
+<v-clicks>
+
+- Google будував **кілька версій системи впродовж року** — з різними трейдофами, без переможця
+- Коли агенту дали **найкращі ідеї як стартову точку** — він зробив робочу версію за ~годину
+- Результат **не production-grade**, але **"useful starting point"**
+- *"I didn't prompt in depth about design choices yet CC was able to give me some good recommendations"*
+- Нові артефакти **"free from baggage"** — без накопиченого технічного боргу
+
+</v-clicks>
+
+</div>
+
+<div v-click class="mt-4 p-3 bg-yellow-500 bg-opacity-10 rounded-lg text-xs border border-yellow-500 border-opacity-20">
+
+💡 Ключовий інсайт: AI не замінює рік досвіду — він прискорює реалізацію вже здобутих знань.
+
+</div>
+
+</div>
+
+---
 layout: section
 transition: fade
 ---
@@ -122,134 +184,6 @@ transition: fade
 - Контекст = весь проект + інструменти
 
 </div>
-
-</div>
-
----
-layout: center
----
-
-# Vibe Coding
-
-<div class="mt-6 p-5 bg-white bg-opacity-5 rounded-xl max-w-xl mx-auto border border-gray-500 border-opacity-20">
-  <div class="flex items-center gap-2 text-sm opacity-50 mb-3">
-    <span class="font-bold">@karpathy</span> · Feb 2025
-  </div>
-  <div class="text-lg leading-relaxed">There's a new kind of coding I call <span class="text-purple-400 font-bold">"vibe coding"</span>, where you fully give in to the vibes, embrace exponentials, and forget that the code even exists.</div>
-  <a href="https://x.com/karpathy/status/1886192184808149383" class="text-xs opacity-30 mt-3 block">x.com/karpathy</a>
-</div>
-
-<div class="mt-6 text-sm opacity-60 text-center">
-
-Слово року за версією Collins Dictionary 2025
-
-</div>
-
-<!--
-Хто чув термін "vibe coding"? (пауза)
-Karpathy описує підхід "дай AI промпт і не думай про код взагалі".
-Це ОК для прототипів та learning. Але не для production.
-Далі покажу чому — і що ми робимо натомість.
--->
-
----
-layout: center
-class: text-center
----
-
-# Vibe Coding на практиці
-
-<img src="/img/vibe-coding.png" class="mx-auto rounded-lg shadow-xl" style="max-height: 350px;" />
-
-<div class="mt-4 text-center">
-<div class="text-lg"><span class="text-red-400 font-bold">AI Slop</span> — код/контент що виглядає правильно, але є generic сміттям</div>
-<div class="text-sm opacity-50 mt-1">Неіснуючі API, вигадані бібліотеки, "працює але не так", hallucinations</div>
-</div>
-
----
-layout: center
----
-
-# Agentic Engineering
-
-<div class="mt-6 p-5 bg-white bg-opacity-5 rounded-xl max-w-xl mx-auto border border-gray-500 border-opacity-20">
-  <div class="flex items-center gap-2 text-sm opacity-50 mb-3">
-    <span class="font-bold">@karpathy</span> · Feb 2026
-  </div>
-  <div class="text-lg leading-relaxed">One year ago I mass-coined "vibe coding". Today I'd like to mass-coin <span class="text-blue-400 font-bold">"agentic engineering"</span> — there is an art & science and expertise to it.</div>
-  <a href="https://x.com/karpathy/status/2019137879310836075" class="text-xs opacity-30 mt-3 block">x.com/karpathy</a>
-</div>
-
-<div class="grid grid-cols-2 gap-12 mt-8 text-center">
-  <div>
-    <div class="text-xl font-bold opacity-40 line-through">Vibe Coding</div>
-    <div class="mt-2 text-sm opacity-40">Промпт → код → "якось працює"</div>
-  </div>
-  <div>
-    <div class="text-xl font-bold text-blue-400">Agentic Engineering</div>
-    <div class="mt-2 text-sm opacity-70">Контекст → агент → review → результат</div>
-  </div>
-</div>
-
----
-
-# Agent Loop — як агент думає і діє
-
-<div class="grid grid-cols-2 gap-8 mt-4 items-center">
-
-<div>
-<img src="https://code.visualstudio.com/assets/docs/copilot/core-concepts/agent-loop.png" class="w-full rounded-lg" />
-<div class="text-xs opacity-30 mt-2"><a href="https://code.visualstudio.com/docs/copilot/core-concepts#_agent-loop" target="_blank">code.visualstudio.com — GitHub Copilot Core Concepts</a></div>
-</div>
-
-<div class="text-sm">
-
-<v-clicks>
-
-- **Understand** — читає файли, шукає по кодбейсу, вивчає документацію
-- **Act** — редагує код, виконує команди, встановлює залежності, викликає API
-- **Validate** — запускає тести, перевіряє помилки компілятора, ревьюає зміни
-- Якщо щось не так — **ітерує** знову
-
-</v-clicks>
-
-<div v-click class="mt-6 p-3 bg-blue-500 bg-opacity-10 rounded-lg border border-blue-500 border-opacity-20">
-
-Агент сам вирішує скільки ітерацій потрібно. Ти можеш зупинити, додати контекст або перенаправити в будь-який момент.
-
-</div>
-
-</div>
-
-</div>
-
----
-layout: center
----
-
-# "За 1 годину те, що команда робила рік"
-
-<div class="mt-8 max-w-2xl mx-auto">
-
-<div class="p-6 bg-white bg-opacity-5 rounded-xl border border-gray-500 border-opacity-20">
-
-<div class="text-sm opacity-50 mb-4">Jaana Dogan · Principal Engineer @ Google</div>
-
-<div class="text-xl leading-relaxed mb-4">
-
-Claude Code побудував **distributed agent orchestration system** приблизно за годину — задачу, над якою команда Google працювала **рік без результату**.
-
-</div>
-
-<div class="text-base opacity-70 italic">
-
-"Quality and efficiency gains in this domain are beyond what anyone could have imagined so far."
-
-</div>
-
-</div>
-
-<div class="text-xs opacity-30 mt-4 text-center"><a href="https://the-decoder.com/google-engineer-says-claude-code-built-in-one-hour-what-her-team-spent-a-year-on/" target="_blank">the-decoder.com</a></div>
 
 </div>
 
@@ -407,6 +341,104 @@ class: text-center
 </div>
 
 </div>
+---
+layout: center
+---
+
+# Vibe Coding
+
+<div class="mt-6 p-5 bg-white bg-opacity-5 rounded-xl max-w-xl mx-auto border border-gray-500 border-opacity-20">
+  <div class="flex items-center gap-2 text-sm opacity-50 mb-3">
+    <span class="font-bold">@karpathy</span> · Feb 2025
+  </div>
+  <div class="text-lg leading-relaxed">There's a new kind of coding I call <span class="text-purple-400 font-bold">"vibe coding"</span>, where you fully give in to the vibes, embrace exponentials, and forget that the code even exists.</div>
+  <a href="https://x.com/karpathy/status/1886192184808149383" class="text-xs opacity-30 mt-3 block">x.com/karpathy</a>
+</div>
+
+<div class="mt-6 text-sm opacity-60 text-center">
+
+Слово року за версією Collins Dictionary 2025
+
+</div>
+
+<!--
+Хто чув термін "vibe coding"? (пауза)
+Karpathy описує підхід "дай AI промпт і не думай про код взагалі".
+Це ОК для прототипів та learning. Але не для production.
+Далі покажу чому — і що ми робимо натомість.
+-->
+
+---
+layout: center
+class: text-center
+---
+
+# Vibe Coding на практиці
+
+<img src="/img/vibe-coding.png" class="mx-auto rounded-lg shadow-xl" style="max-height: 350px;" />
+
+<div class="mt-4 text-center">
+<div class="text-lg"><span class="text-red-400 font-bold">AI Slop</span> — код/контент що виглядає правильно, але є generic сміттям</div>
+<div class="text-sm opacity-50 mt-1">Неіснуючі API, вигадані бібліотеки, "працює але не так", hallucinations</div>
+</div>
+
+---
+layout: center
+---
+
+# Agentic Engineering
+
+<div class="mt-6 p-5 bg-white bg-opacity-5 rounded-xl max-w-xl mx-auto border border-gray-500 border-opacity-20">
+  <div class="flex items-center gap-2 text-sm opacity-50 mb-3">
+    <span class="font-bold">@karpathy</span> · Feb 2026
+  </div>
+  <div class="text-lg leading-relaxed">One year ago I mass-coined "vibe coding". Today I'd like to mass-coin <span class="text-blue-400 font-bold">"agentic engineering"</span> — there is an art & science and expertise to it.</div>
+  <a href="https://x.com/karpathy/status/2019137879310836075" class="text-xs opacity-30 mt-3 block">x.com/karpathy</a>
+</div>
+
+<div class="grid grid-cols-2 gap-12 mt-8 text-center">
+  <div>
+    <div class="text-xl font-bold opacity-40 line-through">Vibe Coding</div>
+    <div class="mt-2 text-sm opacity-40">Промпт → код → "якось працює"</div>
+  </div>
+  <div>
+    <div class="text-xl font-bold text-blue-400">Agentic Engineering</div>
+    <div class="mt-2 text-sm opacity-70">Контекст → агент → review → результат</div>
+  </div>
+</div>
+
+---
+
+# Agent Loop — як агент думає і діє
+
+<div class="grid grid-cols-2 gap-8 mt-4 items-center">
+
+<div>
+<img src="https://code.visualstudio.com/assets/docs/copilot/core-concepts/agent-loop.png" class="w-full rounded-lg" />
+<div class="text-xs opacity-30 mt-2"><a href="https://code.visualstudio.com/docs/copilot/core-concepts#_agent-loop" target="_blank">code.visualstudio.com — GitHub Copilot Core Concepts</a></div>
+</div>
+
+<div class="text-sm">
+
+<v-clicks>
+
+- **Understand** — читає файли, шукає по кодбейсу, вивчає документацію
+- **Act** — редагує код, виконує команди, встановлює залежності, викликає API
+- **Validate** — запускає тести, перевіряє помилки компілятора, ревьюає зміни
+- Якщо щось не так — **ітерує** знову
+
+</v-clicks>
+
+<div v-click class="mt-6 p-3 bg-blue-500 bg-opacity-10 rounded-lg border border-blue-500 border-opacity-20">
+
+Агент сам вирішує скільки ітерацій потрібно. Ти можеш зупинити, додати контекст або перенаправити в будь-який момент.
+
+</div>
+
+</div>
+
+</div>
+
 ---
 layout: section
 transition: fade
