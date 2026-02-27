@@ -1992,7 +1992,7 @@ layout: center
 
 <div>
 
-**2. Rules/Instructions в проекті** — один раз налаштувати, якісний код частіше.
+**2. Rules/Instructions/Skills в проекті** — один раз налаштувати, якісний код частіше.
 
 </div>
 
