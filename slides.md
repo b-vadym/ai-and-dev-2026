@@ -238,6 +238,191 @@ graph LR
 -->
 
 ---
+layout: center
+---
+
+# "За 1 годину те, що команда робила рік"
+
+<div class="mt-8 max-w-2xl mx-auto">
+
+<div class="p-6 bg-white bg-opacity-5 rounded-xl border border-gray-500 border-opacity-20">
+
+<div class="text-sm opacity-50 mb-4">Jaana Dogan · Principal Engineer @ Google</div>
+
+<div class="text-xl leading-relaxed mb-4">
+
+Claude Code побудував **distributed agent orchestration system** приблизно за годину — задачу, над якою команда Google працювала **рік без результату**.
+
+</div>
+
+<div class="text-base opacity-70 italic">
+
+"Quality and efficiency gains in this domain are beyond what anyone could have imagined so far."
+
+</div>
+
+</div>
+
+<div class="text-xs opacity-30 mt-4 text-center"><a href="https://the-decoder.com/google-engineer-says-claude-code-built-in-one-hour-what-her-team-spent-a-year-on/" target="_blank">the-decoder.com</a></div>
+
+</div>
+
+---
+
+layout: section
+transition: fade
+---
+
+# Рейтинги та бенчмарки моделей
+
+Як обрати правильну модель для задачі
+
+---
+
+# Де дивитися рейтинги
+
+<div class="grid grid-cols-2 gap-12 mt-8">
+
+<div>
+
+### LMArena (arena.ai)
+
+<v-clicks>
+
+- "Сліпе" порівняння моделей людьми
+- ELO-рейтинг (як у шахах)
+- Людина бачить 2 відповіді — обирає кращу
+- Не знаючи яка модель яка
+- Найоб'єктивніший рейтинг
+
+</v-clicks>
+
+<!-- Тут можна вставити скріншот arena.ai -->
+
+</div>
+
+<div>
+
+### SWE-bench
+
+<v-clicks>
+
+- Бенчмарк спеціально для коду
+- Реальні GitHub issues як завдання
+- Агент має знайти баг і зафіксити
+- Вимірює end-to-end здатність
+- Найрелевантніший для розробників
+
+</v-clicks>
+
+<!-- Тут можна вставити скріншот swebench.com -->
+
+</div>
+
+</div>
+
+<div class="mt-6 text-sm opacity-60 text-center">
+
+Також: Aider Polyglot Leaderboard, HumanEval, MMLU, LiveCodeBench
+
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# Які бувають агенти для розробки?
+
+<div class="grid grid-cols-2 gap-6 mt-8 text-left max-w-3xl mx-auto">
+
+<div class="p-4 bg-blue-500 bg-opacity-10 rounded-xl border border-blue-500 border-opacity-30">
+  <div class="text-lg font-bold mb-2">🖥️ IDE-агенти</div>
+  <div class="text-xs opacity-60 mb-2 uppercase tracking-wide">Human in the Loop</div>
+  <div class="text-sm opacity-80">Cursor · GitHub Copilot · Windsurf</div>
+  <div class="text-xs opacity-50 mt-2">Щоденна розробка, ви контролюєте кожен крок</div>
+</div>
+
+<div class="p-4 bg-green-500 bg-opacity-10 rounded-xl border border-green-500 border-opacity-30">
+  <div class="text-lg font-bold mb-2">💻 CLI-агенти</div>
+  <div class="text-xs opacity-60 mb-2 uppercase tracking-wide">Terminal</div>
+  <div class="text-sm opacity-80">Claude Code · Aider · Gemini CLI</div>
+  <div class="text-xs opacity-50 mt-2">CI/CD, batch-операції, автоматизація</div>
+</div>
+
+<div class="p-4 bg-purple-500 bg-opacity-10 rounded-xl border border-purple-500 border-opacity-30">
+  <div class="text-lg font-bold mb-2">🎨 Спеціалізовані</div>
+  <div class="text-xs opacity-60 mb-2 uppercase tracking-wide">Domain-specific</div>
+  <div class="text-sm opacity-80">v0.dev · Bolt.new · Figma AI</div>
+  <div class="text-xs opacity-50 mt-2">Прототипи, UI mockups, швидкий MVP</div>
+</div>
+
+<div class="p-4 bg-orange-500 bg-opacity-10 rounded-xl border border-orange-500 border-opacity-30">
+  <div class="text-lg font-bold mb-2">🤖 Автономні</div>
+  <div class="text-xs opacity-60 mb-2 uppercase tracking-wide">Cloud / Background</div>
+  <div class="text-sm opacity-80">Devin · Copilot Workspace · Background Agents</div>
+  <div class="text-xs opacity-50 mt-2">Довгі задачі, паралельна робота</div>
+</div>
+
+</div>
+
+---
+
+# Огляд типів агентів
+
+<div class="grid grid-cols-2 gap-6 mt-4 text-sm">
+
+<div>
+
+### 🖥️ IDE-агенти (Human in the Loop)
+
+- **Cursor** ($20/міс) — форк VS Code, agent mode, MCP
+- **GitHub Copilot** ($10-19) — autocomplete + chat + agent
+- **Windsurf** ($0-15) — Cascade, безкоштовний tier
+- **JetBrains AI** — для PhpStorm фанів
+
+**Коли:** Щоденна розробка, ви контролюєте кожен крок
+
+</div>
+
+<div>
+
+### 💻 CLI-агенти (Terminal)
+
+- **Claude Code** — найпотужніший, PR + коміти
+- **Aider** — open source, будь-яка модель
+- **Gemini CLI** — безкоштовний, 1M контекст
+
+**Коли:** CI/CD, batch-операції, автоматизація
+
+</div>
+
+<div>
+
+### 🎨 Спеціалізовані
+
+- **v0.dev** ($20) — UI-компоненти (React/Tailwind)
+- **Bolt.new / Lovable** — повні аплікації з промпту
+- **Figma AI** — генерація дизайну
+
+**Коли:** Прототипи, UI mockups, швидкий MVP
+
+</div>
+
+<div>
+
+### 🤖 Автономні / Cloud
+
+- **Devin** (~$500) — "AI software engineer"
+- **Copilot Workspace** — від issue до PR в GitHub
+- **Background Agents** (Cursor) — працюють паралельно
+
+**Коли:** Довгі задачі, паралельна робота, потребують нагляду
+
+</div>
+
+</div>
+---
 layout: section
 transition: fade
 ---
@@ -575,162 +760,68 @@ applyTo: "**/*Test.php"
 </div>
 
 ---
+layout: section
+transition: fade
+---
 
-# Function Calling — AI отримує інструменти
+# Rules & Instructions
 
-OpenAI 2023: модель може викликати ваші функції замість того щоб просто відповідати текстом.
+Як керувати поведінкою AI-агента
 
-<div class="grid grid-cols-2 gap-6 mt-4">
+---
+
+# Cursor: Commands, Rules, Skills
+
+<div class="grid grid-cols-3 gap-8 mt-8">
 
 <div>
 
-### Як це працює
+### Rules
 
 <v-clicks>
 
-- Описуєш функцію у JSON Schema
-- Модель вирішує коли її викликати
-- Повертає аргументи → ти виконуєш → передаєш результат назад
-- Модель формує фінальну відповідь
+- Автоматично застосовуються
+- Завжди в контексті агента
+- Конвенції коду
+- Структура проекту
+- "Завжди пиши тести"
+- "Використовуй TypeScript strict"
 
 </v-clicks>
 
 </div>
 
-<div v-click>
-
-```json
-{
-  "name": "get_user",
-  "description": "Отримати дані юзера з БД",
-  "parameters": {
-    "type": "object",
-    "properties": {
-      "user_id": { "type": "integer" }
-    }
-  }
-}
-```
-
-</div>
-
-</div>
-
-<div v-click class="mt-4 p-3 bg-yellow-500 bg-opacity-10 rounded-lg text-sm border border-yellow-500 border-opacity-20">
-
-**Проблема:** кожен провайдер — свій формат. Cursor інтегрує по-своєму, Copilot — по-своєму, Claude — по-своєму.
-
-</div>
-
----
-
-# MCP — Model Context Protocol
-
-<div class="grid grid-cols-2 gap-8 mt-4">
-
 <div>
 
-### Проблема до MCP
+### Commands
 
-```
-Cursor → Jira    (своя інтеграція)
-Cursor → GitHub  (своя інтеграція)
-Copilot → Jira   (своя інтеграція)
-Copilot → GitHub (своя інтеграція)
-...
-```
+<v-clicks>
 
-<div class="text-sm opacity-60 mt-2">N агентів × M інструментів = N×M інтеграцій</div>
+- Викликаються вручну через `/`
+- Шаблони для типових задач
+- `/create-component`
+- `/fix-bug`
+- `/write-tests`
+- Можна параметризувати
+
+</v-clicks>
 
 </div>
 
 <div>
 
-### Після MCP
+### Skills
 
-```
-Cursor  ─┐
-Claude  ─┤─ MCP ─── Jira
-Copilot ─┘       ├── GitHub
-                 ├── PostgreSQL
-                 └── Figma
-```
+<v-clicks>
 
-<div class="text-sm opacity-60 mt-2">N агентів + M інструментів = N+M інтеграцій</div>
+- Комплексні інструкції
+- Для складних сценаріїв
+- Включають кілька кроків
+- Можуть використовувати tools
+- Deploy pipeline
+- Migration workflow
 
-</div>
-
-</div>
-
-<div v-click class="mt-6 grid grid-cols-3 gap-4 text-sm">
-  <div class="p-2 bg-white bg-opacity-5 rounded-lg text-center">
-    <div class="font-bold text-blue-400">Відкритий стандарт</div>
-    <div class="text-xs opacity-60 mt-1">Anthropic, листопад 2024</div>
-  </div>
-  <div class="p-2 bg-white bg-opacity-5 rounded-lg text-center">
-    <div class="font-bold text-green-400">Будь-який агент</div>
-    <div class="text-xs opacity-60 mt-1">Cursor, Copilot, Claude Code</div>
-  </div>
-  <div class="p-2 bg-white bg-opacity-5 rounded-lg text-center">
-    <div class="font-bold text-purple-400">Open source</div>
-    <div class="text-xs opacity-60 mt-1">anthropic.com/news/model-context-protocol</div>
-  </div>
-</div>
-
-<!--
-MCP — це Game changer для enterprise. Замість n інтеграцій (Cursor→Jira, Copilot→Jira...) — один MCP сервер.
-Якщо у вас є внутрішні системи (Confluence, корпоративний Git, БД) — MCP дозволяє підключити їх до будь-якого агента.
-Anthropic відкрили специфікацію, тому конкуренти теж підтримують: OpenAI, Google.
--->
-
----
-
-# MCP — як це працює
-
-<div class="grid grid-cols-2 gap-8 mt-4">
-
-<div>
-
-### Цикл запиту
-
-<div class="mt-2 space-y-2 text-sm">
-
-<div v-click class="flex items-start gap-3 p-2 bg-blue-500 bg-opacity-10 rounded">
-  <span class="text-blue-400 font-mono font-bold mt-0.5">1</span>
-  <span>Ти: <em>"Покажи структуру таблиці users"</em></span>
-</div>
-
-<div v-click class="flex items-start gap-3 p-2 bg-white bg-opacity-5 rounded">
-  <span class="text-gray-400 font-mono font-bold mt-0.5">2</span>
-  <span>Агент викликає MCP-сервер PostgreSQL з запитом</span>
-</div>
-
-<div v-click class="flex items-start gap-3 p-2 bg-white bg-opacity-5 rounded">
-  <span class="text-gray-400 font-mono font-bold mt-0.5">3</span>
-  <span>MCP повертає реальну схему таблиці</span>
-</div>
-
-<div v-click class="flex items-start gap-3 p-2 bg-green-500 bg-opacity-10 rounded">
-  <span class="text-green-400 font-mono font-bold mt-0.5">4</span>
-  <span>Агент пише Entity з правильними типами та полями</span>
-</div>
-
-</div>
-
-</div>
-
-<div>
-
-### Популярні MCP-сервери
-
-<div v-click class="grid grid-cols-2 gap-2 mt-2 text-xs">
-  <div class="p-2 bg-white bg-opacity-5 rounded">🗄️ <b>PostgreSQL</b><br/><span class="opacity-60">читає схему, робить запити</span></div>
-  <div class="p-2 bg-white bg-opacity-5 rounded">🐙 <b>GitHub</b><br/><span class="opacity-60">PR, issues, код</span></div>
-  <div class="p-2 bg-white bg-opacity-5 rounded">🌐 <b>Browser</b><br/><span class="opacity-60">відкриває, клікає, скріншоти</span></div>
-  <div class="p-2 bg-white bg-opacity-5 rounded">🎨 <b>Figma</b><br/><span class="opacity-60">читає дизайн → код</span></div>
-  <div class="p-2 bg-white bg-opacity-5 rounded">📋 <b>Jira</b><br/><span class="opacity-60">тікети, статуси</span></div>
-  <div class="p-2 bg-white bg-opacity-5 rounded">💬 <b>Slack</b><br/><span class="opacity-60">читає, пише канали</span></div>
-</div>
+</v-clicks>
 
 </div>
 
@@ -738,59 +829,57 @@ Anthropic відкрили специфікацію, тому конкурент
 
 ---
 
-# MCP для нашого стеку
+# Еволюція управління агентом
 
-<div class="grid grid-cols-2 gap-6 mt-4">
+<div class="grid grid-cols-3 gap-4 mt-4">
 
-<div>
+<div class="p-3 bg-gray-500 bg-opacity-10 rounded-lg">
 
-### `.cursor/mcp.json`
+### 🗨️ Промпт (2022–2023)
 
-```json
-{
-  "mcpServers": {
-    "postgres": {
-      "command": "npx",
-      "args": [
-        "-y", "@modelcontextprotocol/server-postgres",
-        "postgresql://localhost/myapp"
-      ]
-    },
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": { "GITHUB_TOKEN": "..." }
-    }
-  }
-}
-```
+<v-clicks>
+
+- Все в одному повідомленні
+- Одноразово, без збереження
+- Кожен раз переписуєш заново
+
+</v-clicks>
 
 </div>
 
-<div>
+<div class="p-3 bg-blue-500 bg-opacity-10 rounded-lg">
 
-### Що тепер може агент
+### 📋 Rules (2023–2024)
 
-<div class="space-y-2 mt-2 text-sm">
+<v-clicks>
 
-<div v-click class="p-2 bg-white bg-opacity-5 rounded">
-  💬 <em>"Подивись на структуру таблиці orders і напиши Entity"</em>
-  <div class="text-xs opacity-50 mt-1">→ читає БД → пише правильний PHP-клас</div>
+- Постійно в контексті агента
+- Конвенції та стиль коду
+- Прості, декларативні
+
+</v-clicks>
+
 </div>
 
-<div v-click class="p-2 bg-white bg-opacity-5 rounded">
-  💬 <em>"Створи PR з описом з тікету #234"</em>
-  <div class="text-xs opacity-50 mt-1">→ читає GitHub issue → пише опис → відкриває PR</div>
-</div>
+<div class="p-3 bg-green-500 bg-opacity-10 rounded-lg">
 
-<div v-click class="p-2 bg-white bg-opacity-5 rounded">
-  💬 <em>"Знайди всі запити де немає індексів"</em>
-  <div class="text-xs opacity-50 mt-1">→ аналізує схему БД → дає рекомендації</div>
+### ⚡ Skills (2025–2026)
+
+<v-clicks>
+
+- Комплексні, багатокрокові
+- Використовують tools агента
+- Як playbook або runbook
+
+</v-clicks>
+
 </div>
 
 </div>
 
-</div>
+<div v-click class="mt-4 p-3 bg-purple-500 bg-opacity-10 rounded-lg text-center">
+
+💡 **Skills = операційні процедури для AI-агента** — закодована експертиза команди
 
 </div>
 
@@ -952,594 +1041,6 @@ my-deploy-skill/
 </v-clicks>
 
 </div>
-
-</div>
-
----
-
-# Semantic Search — Cursor розуміє ваш код
-
-Cursor індексує весь проект і шукає за **змістом**, а не за текстом.
-
-<div class="grid grid-cols-2 gap-8 mt-6">
-
-<div>
-
-### Grep vs Semantic Search
-
-<div class="space-y-3 mt-2 text-sm">
-
-<div class="p-3 bg-red-500 bg-opacity-10 rounded-lg">
-  <div class="font-bold mb-1">Grep (текстовий пошук)</div>
-  <div class="font-mono text-xs opacity-70">"де використовується UserService"</div>
-  <div class="text-xs opacity-50 mt-1">→ знайде лише точне співпадіння рядка</div>
-</div>
-
-<div v-click class="p-3 bg-green-500 bg-opacity-10 rounded-lg">
-  <div class="font-bold mb-1">Semantic Search</div>
-  <div class="font-mono text-xs opacity-70">"де обробляється автентифікація?"</div>
-  <div class="text-xs opacity-50 mt-1">→ знайде весь пов'язаний код по змісту</div>
-</div>
-
-</div>
-
-</div>
-
-<div>
-
-### Як це працює
-
-<v-clicks>
-
-- Код розбивається на блоки (функції, класи)
-- Кожен блок → вектор через AI-модель
-- Твій запит → вектор → порівняння
-- Результат: найрелевантніші фрагменти
-
-</v-clicks>
-
-<div v-click class="mt-4 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-xs">
-
-Cursor поєднує **grep + semantic** разом — точність тексту + розуміння змісту.<br/>
-Індекс оновлюється кожні 5 хв автоматично.
-
-</div>
-
-</div>
-
-</div>
-
----
-
-# Context Engineering: дві крайнощі
-
-<div class="grid grid-cols-2 gap-8 mt-8">
-
-<div class="p-4 bg-red-500 bg-opacity-10 rounded-lg">
-
-### Замало контексту
-
-```
-Напиши API endpoint для створення юзера
-```
-
-<v-clicks>
-
-- AI вигадує архітектуру сам
-- Generic код, не для вашого проекту
-- Доведеться переписувати
-
-</v-clicks>
-
-</div>
-
-<div class="p-4 bg-red-500 bg-opacity-10 rounded-lg">
-
-### Забагато контексту
-
-```
-Ось весь проект, всі файли, вся
-документація, всі тести...
-Зроби endpoint.
-```
-
-<v-clicks>
-
-- Context rot — модель "губиться"
-- Agent drift — робить не те
-- Дорого (токени = гроші)
-
-</v-clicks>
-
-</div>
-
-</div>
-
----
-
-# Context Rot — довший контекст = гірший результат
-
-Дослідження Chroma (2025): продуктивність моделей **суттєво падає** зі збільшенням контексту.
-
-<div class="grid grid-cols-2 gap-6 mt-4">
-
-<div>
-
-<img src="https://research.trychroma.com/img/context_rot/hero_plot.png" class="w-full rounded-lg" />
-<div class="text-xs opacity-30 mt-1"><a href="https://research.trychroma.com/context-rot" target="_blank">research.trychroma.com/context-rot</a></div>
-
-</div>
-
-<div class="text-sm">
-
-### Що знайшли (18 моделей: GPT-4.1, Claude 4, Gemini 2.5...)
-
-<v-clicks>
-
-- Фокусований контекст (~300 токенів) vs повний (~113k) — **разюча різниця**
-- При **10 000 словах** деградація різко зростає у всіх моделей
-- Навіть один "відволікаючий" елемент знижує точність
-- Парадокс: **перемішаний** контекст обробляється краще ніж логічно структурований
-
-</v-clicks>
-
-<div v-click class="mt-4 p-3 bg-red-500 bg-opacity-10 rounded-lg text-xs border border-red-500 border-opacity-20">
-
-Більше контексту ≠ кращий результат.<br/>
-Моделі не читають контекст рівномірно — увага розсіюється.
-
-</div>
-
-</div>
-
-</div>
-
----
-
-# Як контекст ламається — 4 типи збоїв
-
-<div class="grid grid-cols-2 gap-4 mt-4 text-sm">
-
-<div class="p-3 bg-red-500 bg-opacity-10 rounded-lg border border-red-500 border-opacity-20">
-
-**☠️ Context Poisoning**
-
-Галюцинація потрапляє в контекст і далі підсилює себе. Агент будує стратегію на основі вигаданих даних.
-
-</div>
-
-<div class="p-3 bg-orange-500 bg-opacity-10 rounded-lg border border-orange-500 border-opacity-20">
-
-**😵 Context Distraction**
-
-При великому контексті модель повторює старі паттерни замість нового міркування.
-
-</div>
-
-<div class="p-3 bg-yellow-500 bg-opacity-10 rounded-lg border border-yellow-500 border-opacity-20">
-
-**🌫️ Context Confusion**
-
-Зайва інформація заважає. Llama 3.1 8B впоралася з 19 інструментами, але "провалилася" з 46.
-
-</div>
-
-<div class="p-3 bg-purple-500 bg-opacity-10 rounded-lg border border-purple-500 border-opacity-20">
-
-**⚔️ Context Clash**
-
-Суперечлива інформація з різних джерел. Microsoft/Salesforce: -39% точності через накопичені протиріччя.
-
-</div>
-
-</div>
-
-<div class="text-xs opacity-30 mt-4"><a href="https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html" target="_blank">dbreunig.com — How Contexts Fail and How to Fix Them</a></div>
-
----
-
-# Agent Drift
-
-**Визначення:** Поступове відхилення AI-агента від поставленої задачі.
-
-<div class="grid grid-cols-2 gap-8 mt-4">
-
-<div>
-
-### Математика drift
-
-<div class="mt-4 p-4 bg-red-500 bg-opacity-10 rounded-lg font-mono text-center">
-  <div class="text-sm opacity-60 mb-2">Якщо кожен крок вірний на 99%:</div>
-  <div class="text-xl"><code>pow(0.99, 100) = 0.366</code></div>
-  <div class="text-sm opacity-60 mt-2">100 кроків → <span class="text-red-400 font-bold">лише 37% шанс</span> що все правильно</div>
-</div>
-
-<div class="mt-3 text-xs opacity-50">
-
-| Кроків | pow(0.99, n) | Результат |
-|---|---|---|
-| 10 | 0.904 | Ще ок |
-| 50 | 0.605 | Підкидаєш монетку |
-| 100 | 0.366 | Скоріш за все зламано |
-
-</div>
-
-</div>
-
-<div>
-
-### Як боротися
-
-<v-clicks>
-
-- Розбивати задачі на менші частини
-- Чіткі правила та обмеження (Rules)
-- Review проміжних результатів
-- Нова сесія для нової задачі
-- Git — завжди можна відкатити
-
-</v-clicks>
-
-<div v-click class="mt-3 p-2 bg-yellow-500 bg-opacity-10 rounded-lg text-xs">
-
-💡 "Попросив додати кнопку — агент відрефакторив пів проекту і переписав роутинг"
-
-</div>
-
-</div>
-
-</div>
-
----
-
-# Рішення: правильний контекст
-
-<div class="grid grid-cols-2 gap-8 mt-6">
-
-<div class="p-4 bg-green-500 bg-opacity-10 rounded-lg">
-
-### Приклад правильного контексту
-
-```
-Endpoint для створення юзера.
-Стек: Symfony 7, API Platform.
-Приклад: src/Entity/Product.php
-Валідація: Assert атрибути.
-Тести: tests/Api/
-```
-
-<v-clicks>
-
-- Мінімум потрібної інформації
-- Конкретні приклади з проекту
-- Чіткі обмеження і конвенції
-
-</v-clicks>
-
-</div>
-
-<div>
-
-### Як цього досягти
-
-<v-clicks>
-
-- **Rules файли** — автоматично додають контекст
-- **Memory Bank** — AI знає проект між сесіями
-- **Короткі сесії** — менше drift
-- **MCP** — AI сам бере потрібне з БД, GitHub
-- **SDD** — spec як джерело правди
-
-</v-clicks>
-
-<div v-click class="mt-4 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-xs">
-
-Anthropic: "Find the <span class="text-blue-400 font-bold">smallest possible set</span> of high-signal tokens that maximize the desired outcome"
-
-</div>
-
-</div>
-
-</div>
-
----
-layout: section
-transition: fade
----
-
-# Рейтинги та бенчмарки моделей
-
-Як обрати правильну модель для задачі
-
----
-
-# Де дивитися рейтинги
-
-<div class="grid grid-cols-2 gap-12 mt-8">
-
-<div>
-
-### LMArena (arena.ai)
-
-<v-clicks>
-
-- "Сліпе" порівняння моделей людьми
-- ELO-рейтинг (як у шахах)
-- Людина бачить 2 відповіді — обирає кращу
-- Не знаючи яка модель яка
-- Найоб'єктивніший рейтинг
-
-</v-clicks>
-
-<!-- Тут можна вставити скріншот arena.ai -->
-
-</div>
-
-<div>
-
-### SWE-bench
-
-<v-clicks>
-
-- Бенчмарк спеціально для коду
-- Реальні GitHub issues як завдання
-- Агент має знайти баг і зафіксити
-- Вимірює end-to-end здатність
-- Найрелевантніший для розробників
-
-</v-clicks>
-
-<!-- Тут можна вставити скріншот swebench.com -->
-
-</div>
-
-</div>
-
-<div class="mt-6 text-sm opacity-60 text-center">
-
-Також: Aider Polyglot Leaderboard, HumanEval, MMLU, LiveCodeBench
-
-</div>
-
----
-layout: center
-class: text-center
----
-
-# Які бувають агенти для розробки?
-
-<div class="grid grid-cols-2 gap-6 mt-8 text-left max-w-3xl mx-auto">
-
-<div class="p-4 bg-blue-500 bg-opacity-10 rounded-xl border border-blue-500 border-opacity-30">
-  <div class="text-lg font-bold mb-2">🖥️ IDE-агенти</div>
-  <div class="text-xs opacity-60 mb-2 uppercase tracking-wide">Human in the Loop</div>
-  <div class="text-sm opacity-80">Cursor · GitHub Copilot · Windsurf</div>
-  <div class="text-xs opacity-50 mt-2">Щоденна розробка, ви контролюєте кожен крок</div>
-</div>
-
-<div class="p-4 bg-green-500 bg-opacity-10 rounded-xl border border-green-500 border-opacity-30">
-  <div class="text-lg font-bold mb-2">💻 CLI-агенти</div>
-  <div class="text-xs opacity-60 mb-2 uppercase tracking-wide">Terminal</div>
-  <div class="text-sm opacity-80">Claude Code · Aider · Gemini CLI</div>
-  <div class="text-xs opacity-50 mt-2">CI/CD, batch-операції, автоматизація</div>
-</div>
-
-<div class="p-4 bg-purple-500 bg-opacity-10 rounded-xl border border-purple-500 border-opacity-30">
-  <div class="text-lg font-bold mb-2">🎨 Спеціалізовані</div>
-  <div class="text-xs opacity-60 mb-2 uppercase tracking-wide">Domain-specific</div>
-  <div class="text-sm opacity-80">v0.dev · Bolt.new · Figma AI</div>
-  <div class="text-xs opacity-50 mt-2">Прототипи, UI mockups, швидкий MVP</div>
-</div>
-
-<div class="p-4 bg-orange-500 bg-opacity-10 rounded-xl border border-orange-500 border-opacity-30">
-  <div class="text-lg font-bold mb-2">🤖 Автономні</div>
-  <div class="text-xs opacity-60 mb-2 uppercase tracking-wide">Cloud / Background</div>
-  <div class="text-sm opacity-80">Devin · Copilot Workspace · Background Agents</div>
-  <div class="text-xs opacity-50 mt-2">Довгі задачі, паралельна робота</div>
-</div>
-
-</div>
-
----
-
-# Огляд типів агентів
-
-<div class="grid grid-cols-2 gap-6 mt-4 text-sm">
-
-<div>
-
-### 🖥️ IDE-агенти (Human in the Loop)
-
-- **Cursor** ($20/міс) — форк VS Code, agent mode, MCP
-- **GitHub Copilot** ($10-19) — autocomplete + chat + agent
-- **Windsurf** ($0-15) — Cascade, безкоштовний tier
-- **JetBrains AI** — для PhpStorm фанів
-
-**Коли:** Щоденна розробка, ви контролюєте кожен крок
-
-</div>
-
-<div>
-
-### 💻 CLI-агенти (Terminal)
-
-- **Claude Code** — найпотужніший, PR + коміти
-- **Aider** — open source, будь-яка модель
-- **Gemini CLI** — безкоштовний, 1M контекст
-
-**Коли:** CI/CD, batch-операції, автоматизація
-
-</div>
-
-<div>
-
-### 🎨 Спеціалізовані
-
-- **v0.dev** ($20) — UI-компоненти (React/Tailwind)
-- **Bolt.new / Lovable** — повні аплікації з промпту
-- **Figma AI** — генерація дизайну
-
-**Коли:** Прототипи, UI mockups, швидкий MVP
-
-</div>
-
-<div>
-
-### 🤖 Автономні / Cloud
-
-- **Devin** (~$500) — "AI software engineer"
-- **Copilot Workspace** — від issue до PR в GitHub
-- **Background Agents** (Cursor) — працюють паралельно
-
-**Коли:** Довгі задачі, паралельна робота, потребують нагляду
-
-</div>
-
-</div>
----
-layout: section
-transition: fade
----
-
-# Rules & Instructions
-
-Як керувати поведінкою AI-агента
-
----
-
-# Ієрархія конфігурації агента
-
-<div class="mt-6">
-
-| Файл | Інструмент | Для чого |
-|---|---|---|
-| `.cursorrules` | Cursor | Загальні правила для всього проекту |
-| `.cursor/rules/*.md` | Cursor | Правила для конкретних файлів/паттернів |
-| `.cursor/skills/*.md` | Cursor | Комплексні інструкції для складних сценаріїв |
-| `AGENTS.md` | GitHub Copilot, Codex | Інструкції для агента (аналог .cursorrules) |
-| `CLAUDE.md` | Claude Code | Інструкції для Claude в терміналі |
-| `llms.txt` | Будь-який AI | Публічний опис проекту для AI (як robots.txt) |
-
-</div>
-
-<div v-click class="mt-6 p-3 bg-yellow-500 bg-opacity-10 rounded-lg text-sm">
-
-💡 Тренд 2026: кожен проект має файл інструкцій для AI, як раніше мав README.md
-
-</div>
-
----
-
-# Cursor: Commands, Rules, Skills
-
-<div class="grid grid-cols-3 gap-8 mt-8">
-
-<div>
-
-### Rules
-
-<v-clicks>
-
-- Автоматично застосовуються
-- Завжди в контексті агента
-- Конвенції коду
-- Структура проекту
-- "Завжди пиши тести"
-- "Використовуй TypeScript strict"
-
-</v-clicks>
-
-</div>
-
-<div>
-
-### Commands
-
-<v-clicks>
-
-- Викликаються вручну через `/`
-- Шаблони для типових задач
-- `/create-component`
-- `/fix-bug`
-- `/write-tests`
-- Можна параметризувати
-
-</v-clicks>
-
-</div>
-
-<div>
-
-### Skills
-
-<v-clicks>
-
-- Комплексні інструкції
-- Для складних сценаріїв
-- Включають кілька кроків
-- Можуть використовувати tools
-- Deploy pipeline
-- Migration workflow
-
-</v-clicks>
-
-</div>
-
-</div>
-
----
-
-# Еволюція управління агентом
-
-<div class="grid grid-cols-3 gap-4 mt-4">
-
-<div class="p-3 bg-gray-500 bg-opacity-10 rounded-lg">
-
-### 🗨️ Промпт (2022–2023)
-
-<v-clicks>
-
-- Все в одному повідомленні
-- Одноразово, без збереження
-- Кожен раз переписуєш заново
-
-</v-clicks>
-
-</div>
-
-<div class="p-3 bg-blue-500 bg-opacity-10 rounded-lg">
-
-### 📋 Rules (2023–2024)
-
-<v-clicks>
-
-- Постійно в контексті агента
-- Конвенції та стиль коду
-- Прості, декларативні
-
-</v-clicks>
-
-</div>
-
-<div class="p-3 bg-green-500 bg-opacity-10 rounded-lg">
-
-### ⚡ Skills (2025–2026)
-
-<v-clicks>
-
-- Комплексні, багатокрокові
-- Використовують tools агента
-- Як playbook або runbook
-
-</v-clicks>
-
-</div>
-
-</div>
-
-<div v-click class="mt-4 p-3 bg-purple-500 bg-opacity-10 rounded-lg text-center">
-
-💡 **Skills = операційні процедури для AI-агента** — закодована експертиза команди
 
 </div>
 
@@ -1827,6 +1328,513 @@ memory-bank/
 - Нехай AI сам оновлює свою пам'ять
 - Зберігайте в git разом з проектом
 - Використовуйте як onboarding для нових розробників
+
+</div>
+
+</div>
+
+---
+
+# Function Calling — AI отримує інструменти
+
+OpenAI 2023: модель може викликати ваші функції замість того щоб просто відповідати текстом.
+
+<div class="grid grid-cols-2 gap-6 mt-4">
+
+<div>
+
+### Як це працює
+
+<v-clicks>
+
+- Описуєш функцію у JSON Schema
+- Модель вирішує коли її викликати
+- Повертає аргументи → ти виконуєш → передаєш результат назад
+- Модель формує фінальну відповідь
+
+</v-clicks>
+
+</div>
+
+<div v-click>
+
+```json
+{
+  "name": "get_user",
+  "description": "Отримати дані юзера з БД",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "user_id": { "type": "integer" }
+    }
+  }
+}
+```
+
+</div>
+
+</div>
+
+<div v-click class="mt-4 p-3 bg-yellow-500 bg-opacity-10 rounded-lg text-sm border border-yellow-500 border-opacity-20">
+
+**Проблема:** кожен провайдер — свій формат. Cursor інтегрує по-своєму, Copilot — по-своєму, Claude — по-своєму.
+
+</div>
+
+---
+
+# MCP — Model Context Protocol
+
+<div class="grid grid-cols-2 gap-8 mt-4">
+
+<div>
+
+### Проблема до MCP
+
+```
+Cursor → Jira    (своя інтеграція)
+Cursor → GitHub  (своя інтеграція)
+Copilot → Jira   (своя інтеграція)
+Copilot → GitHub (своя інтеграція)
+...
+```
+
+<div class="text-sm opacity-60 mt-2">N агентів × M інструментів = N×M інтеграцій</div>
+
+</div>
+
+<div>
+
+### Після MCP
+
+```
+Cursor  ─┐
+Claude  ─┤─ MCP ─── Jira
+Copilot ─┘       ├── GitHub
+                 ├── PostgreSQL
+                 └── Figma
+```
+
+<div class="text-sm opacity-60 mt-2">N агентів + M інструментів = N+M інтеграцій</div>
+
+</div>
+
+</div>
+
+<div v-click class="mt-6 grid grid-cols-3 gap-4 text-sm">
+  <div class="p-2 bg-white bg-opacity-5 rounded-lg text-center">
+    <div class="font-bold text-blue-400">Відкритий стандарт</div>
+    <div class="text-xs opacity-60 mt-1">Anthropic, листопад 2024</div>
+  </div>
+  <div class="p-2 bg-white bg-opacity-5 rounded-lg text-center">
+    <div class="font-bold text-green-400">Будь-який агент</div>
+    <div class="text-xs opacity-60 mt-1">Cursor, Copilot, Claude Code</div>
+  </div>
+  <div class="p-2 bg-white bg-opacity-5 rounded-lg text-center">
+    <div class="font-bold text-purple-400">Open source</div>
+    <div class="text-xs opacity-60 mt-1">anthropic.com/news/model-context-protocol</div>
+  </div>
+</div>
+
+<!--
+MCP — це Game changer для enterprise. Замість n інтеграцій (Cursor→Jira, Copilot→Jira...) — один MCP сервер.
+Якщо у вас є внутрішні системи (Confluence, корпоративний Git, БД) — MCP дозволяє підключити їх до будь-якого агента.
+Anthropic відкрили специфікацію, тому конкуренти теж підтримують: OpenAI, Google.
+-->
+
+---
+
+# MCP — як це працює
+
+<div class="grid grid-cols-2 gap-8 mt-4">
+
+<div>
+
+### Цикл запиту
+
+<div class="mt-2 space-y-2 text-sm">
+
+<div v-click class="flex items-start gap-3 p-2 bg-blue-500 bg-opacity-10 rounded">
+  <span class="text-blue-400 font-mono font-bold mt-0.5">1</span>
+  <span>Ти: <em>"Покажи структуру таблиці users"</em></span>
+</div>
+
+<div v-click class="flex items-start gap-3 p-2 bg-white bg-opacity-5 rounded">
+  <span class="text-gray-400 font-mono font-bold mt-0.5">2</span>
+  <span>Агент викликає MCP-сервер PostgreSQL з запитом</span>
+</div>
+
+<div v-click class="flex items-start gap-3 p-2 bg-white bg-opacity-5 rounded">
+  <span class="text-gray-400 font-mono font-bold mt-0.5">3</span>
+  <span>MCP повертає реальну схему таблиці</span>
+</div>
+
+<div v-click class="flex items-start gap-3 p-2 bg-green-500 bg-opacity-10 rounded">
+  <span class="text-green-400 font-mono font-bold mt-0.5">4</span>
+  <span>Агент пише Entity з правильними типами та полями</span>
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+### Популярні MCP-сервери
+
+<div v-click class="grid grid-cols-2 gap-2 mt-2 text-xs">
+  <div class="p-2 bg-white bg-opacity-5 rounded">🗄️ <b>PostgreSQL</b><br/><span class="opacity-60">читає схему, робить запити</span></div>
+  <div class="p-2 bg-white bg-opacity-5 rounded">🐙 <b>GitHub</b><br/><span class="opacity-60">PR, issues, код</span></div>
+  <div class="p-2 bg-white bg-opacity-5 rounded">🌐 <b>Browser</b><br/><span class="opacity-60">відкриває, клікає, скріншоти</span></div>
+  <div class="p-2 bg-white bg-opacity-5 rounded">🎨 <b>Figma</b><br/><span class="opacity-60">читає дизайн → код</span></div>
+  <div class="p-2 bg-white bg-opacity-5 rounded">📋 <b>Jira</b><br/><span class="opacity-60">тікети, статуси</span></div>
+  <div class="p-2 bg-white bg-opacity-5 rounded">💬 <b>Slack</b><br/><span class="opacity-60">читає, пише канали</span></div>
+</div>
+
+</div>
+
+</div>
+
+---
+
+# MCP для нашого стеку
+
+<div class="grid grid-cols-2 gap-6 mt-4">
+
+<div>
+
+### `.cursor/mcp.json`
+
+```json
+{
+  "mcpServers": {
+    "postgres": {
+      "command": "npx",
+      "args": [
+        "-y", "@modelcontextprotocol/server-postgres",
+        "postgresql://localhost/myapp"
+      ]
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": { "GITHUB_TOKEN": "..." }
+    }
+  }
+}
+```
+
+</div>
+
+<div>
+
+### Що тепер може агент
+
+<div class="space-y-2 mt-2 text-sm">
+
+<div v-click class="p-2 bg-white bg-opacity-5 rounded">
+  💬 <em>"Подивись на структуру таблиці orders і напиши Entity"</em>
+  <div class="text-xs opacity-50 mt-1">→ читає БД → пише правильний PHP-клас</div>
+</div>
+
+<div v-click class="p-2 bg-white bg-opacity-5 rounded">
+  💬 <em>"Створи PR з описом з тікету #234"</em>
+  <div class="text-xs opacity-50 mt-1">→ читає GitHub issue → пише опис → відкриває PR</div>
+</div>
+
+<div v-click class="p-2 bg-white bg-opacity-5 rounded">
+  💬 <em>"Знайди всі запити де немає індексів"</em>
+  <div class="text-xs opacity-50 mt-1">→ аналізує схему БД → дає рекомендації</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+---
+
+# Semantic Search — Cursor розуміє ваш код
+
+Cursor індексує весь проект і шукає за **змістом**, а не за текстом.
+
+<div class="grid grid-cols-2 gap-8 mt-6">
+
+<div>
+
+### Grep vs Semantic Search
+
+<div class="space-y-3 mt-2 text-sm">
+
+<div class="p-3 bg-red-500 bg-opacity-10 rounded-lg">
+  <div class="font-bold mb-1">Grep (текстовий пошук)</div>
+  <div class="font-mono text-xs opacity-70">"де використовується UserService"</div>
+  <div class="text-xs opacity-50 mt-1">→ знайде лише точне співпадіння рядка</div>
+</div>
+
+<div v-click class="p-3 bg-green-500 bg-opacity-10 rounded-lg">
+  <div class="font-bold mb-1">Semantic Search</div>
+  <div class="font-mono text-xs opacity-70">"де обробляється автентифікація?"</div>
+  <div class="text-xs opacity-50 mt-1">→ знайде весь пов'язаний код по змісту</div>
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+### Як це працює
+
+<v-clicks>
+
+- Код розбивається на блоки (функції, класи)
+- Кожен блок → вектор через AI-модель
+- Твій запит → вектор → порівняння
+- Результат: найрелевантніші фрагменти
+
+</v-clicks>
+
+<div v-click class="mt-4 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-xs">
+
+Cursor поєднує **grep + semantic** разом — точність тексту + розуміння змісту.<br/>
+Індекс оновлюється кожні 5 хв автоматично.
+
+</div>
+
+</div>
+
+</div>
+
+---
+
+# Context Engineering: дві крайнощі
+
+<div class="grid grid-cols-2 gap-8 mt-8">
+
+<div class="p-4 bg-red-500 bg-opacity-10 rounded-lg">
+
+### Замало контексту
+
+```
+Напиши API endpoint для створення юзера
+```
+
+<v-clicks>
+
+- AI вигадує архітектуру сам
+- Generic код, не для вашого проекту
+- Доведеться переписувати
+
+</v-clicks>
+
+</div>
+
+<div class="p-4 bg-red-500 bg-opacity-10 rounded-lg">
+
+### Забагато контексту
+
+```
+Ось весь проект, всі файли, вся
+документація, всі тести...
+Зроби endpoint.
+```
+
+<v-clicks>
+
+- Context rot — модель "губиться"
+- Agent drift — робить не те
+- Дорого (токени = гроші)
+
+</v-clicks>
+
+</div>
+
+</div>
+
+---
+
+# Context Rot — довший контекст = гірший результат
+
+Дослідження Chroma (2025): продуктивність моделей **суттєво падає** зі збільшенням контексту.
+
+<div class="grid grid-cols-2 gap-6 mt-4">
+
+<div>
+
+<img src="https://research.trychroma.com/img/context_rot/hero_plot.png" class="w-full rounded-lg" />
+<div class="text-xs opacity-30 mt-1"><a href="https://research.trychroma.com/context-rot" target="_blank">research.trychroma.com/context-rot</a></div>
+
+</div>
+
+<div class="text-sm">
+
+### Що знайшли (18 моделей: GPT-4.1, Claude 4, Gemini 2.5...)
+
+<v-clicks>
+
+- Фокусований контекст (~300 токенів) vs повний (~113k) — **разюча різниця**
+- При **10 000 словах** деградація різко зростає у всіх моделей
+- Навіть один "відволікаючий" елемент знижує точність
+- Парадокс: **перемішаний** контекст обробляється краще ніж логічно структурований
+
+</v-clicks>
+
+<div v-click class="mt-4 p-3 bg-red-500 bg-opacity-10 rounded-lg text-xs border border-red-500 border-opacity-20">
+
+Більше контексту ≠ кращий результат.<br/>
+Моделі не читають контекст рівномірно — увага розсіюється.
+
+</div>
+
+</div>
+
+</div>
+
+---
+
+# Як контекст ламається — 4 типи збоїв
+
+<div class="grid grid-cols-2 gap-4 mt-4 text-sm">
+
+<div class="p-3 bg-red-500 bg-opacity-10 rounded-lg border border-red-500 border-opacity-20">
+
+**☠️ Context Poisoning**
+
+Галюцинація потрапляє в контекст і далі підсилює себе. Агент будує стратегію на основі вигаданих даних.
+
+</div>
+
+<div class="p-3 bg-orange-500 bg-opacity-10 rounded-lg border border-orange-500 border-opacity-20">
+
+**😵 Context Distraction**
+
+При великому контексті модель повторює старі паттерни замість нового міркування.
+
+</div>
+
+<div class="p-3 bg-yellow-500 bg-opacity-10 rounded-lg border border-yellow-500 border-opacity-20">
+
+**🌫️ Context Confusion**
+
+Зайва інформація заважає. Llama 3.1 8B впоралася з 19 інструментами, але "провалилася" з 46.
+
+</div>
+
+<div class="p-3 bg-purple-500 bg-opacity-10 rounded-lg border border-purple-500 border-opacity-20">
+
+**⚔️ Context Clash**
+
+Суперечлива інформація з різних джерел. Microsoft/Salesforce: -39% точності через накопичені протиріччя.
+
+</div>
+
+</div>
+
+<div class="text-xs opacity-30 mt-4"><a href="https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html" target="_blank">dbreunig.com — How Contexts Fail and How to Fix Them</a></div>
+
+---
+
+# Agent Drift
+
+**Визначення:** Поступове відхилення AI-агента від поставленої задачі.
+
+<div class="grid grid-cols-2 gap-8 mt-4">
+
+<div>
+
+### Математика drift
+
+<div class="mt-4 p-4 bg-red-500 bg-opacity-10 rounded-lg font-mono text-center">
+  <div class="text-sm opacity-60 mb-2">Якщо кожен крок вірний на 99%:</div>
+  <div class="text-xl"><code>pow(0.99, 100) = 0.366</code></div>
+  <div class="text-sm opacity-60 mt-2">100 кроків → <span class="text-red-400 font-bold">лише 37% шанс</span> що все правильно</div>
+</div>
+
+<div class="mt-3 text-xs opacity-50">
+
+| Кроків | pow(0.99, n) | Результат |
+|---|---|---|
+| 10 | 0.904 | Ще ок |
+| 50 | 0.605 | Підкидаєш монетку |
+| 100 | 0.366 | Скоріш за все зламано |
+
+</div>
+
+</div>
+
+<div>
+
+### Як боротися
+
+<v-clicks>
+
+- Розбивати задачі на менші частини
+- Чіткі правила та обмеження (Rules)
+- Review проміжних результатів
+- Нова сесія для нової задачі
+- Git — завжди можна відкатити
+
+</v-clicks>
+
+<div v-click class="mt-3 p-2 bg-yellow-500 bg-opacity-10 rounded-lg text-xs">
+
+💡 "Попросив додати кнопку — агент відрефакторив пів проекту і переписав роутинг"
+
+</div>
+
+</div>
+
+</div>
+
+---
+
+# Рішення: правильний контекст
+
+<div class="grid grid-cols-2 gap-8 mt-6">
+
+<div class="p-4 bg-green-500 bg-opacity-10 rounded-lg">
+
+### Приклад правильного контексту
+
+```
+Endpoint для створення юзера.
+Стек: Symfony 7, API Platform.
+Приклад: src/Entity/Product.php
+Валідація: Assert атрибути.
+Тести: tests/Api/
+```
+
+<v-clicks>
+
+- Мінімум потрібної інформації
+- Конкретні приклади з проекту
+- Чіткі обмеження і конвенції
+
+</v-clicks>
+
+</div>
+
+<div>
+
+### Як цього досягти
+
+<v-clicks>
+
+- **Rules файли** — автоматично додають контекст
+- **Memory Bank** — AI знає проект між сесіями
+- **Короткі сесії** — менше drift
+- **MCP** — AI сам бере потрібне з БД, GitHub
+- **SDD** — spec як джерело правди
+
+</v-clicks>
+
+<div v-click class="mt-4 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-xs">
+
+Anthropic: "Find the <span class="text-blue-400 font-bold">smallest possible set</span> of high-signal tokens that maximize the desired outcome"
+
+</div>
 
 </div>
 
@@ -2433,44 +2441,6 @@ glab mr note "${CI_MERGE_REQUEST_IID}" \
 </div>
 
 ---
-layout: center
----
-
-# Що почати використовувати завтра?
-
-<div class="mt-8 text-left">
-
-<v-clicks>
-
-<div class="p-3 my-3 bg-blue-500 bg-opacity-10 rounded-lg">
-
-**Крок 1:** Встановити Cursor або GitHub Copilot (10 хвилин)
-
-</div>
-
-<div class="p-3 my-3 bg-green-500 bg-opacity-10 rounded-lg">
-
-**Крок 2:** Створити `.cursorrules` або `AGENTS.md` для вашого проекту (30 хвилин)
-
-</div>
-
-<div class="p-3 my-3 bg-purple-500 bg-opacity-10 rounded-lg">
-
-**Крок 3:** Спробувати Agent mode для рутинної задачі (1 година)
-
-</div>
-
-<div class="p-3 my-3 bg-yellow-500 bg-opacity-10 rounded-lg">
-
-**Крок 4:** Поділитися досвідом з командою та створити спільні правила
-
-</div>
-
-</v-clicks>
-
-</div>
-
----
 layout: section
 transition: fade
 ---
@@ -2659,6 +2629,44 @@ SDD — практичний наступний крок для команди. 
 Спробуйте на одній фічі в наступному спринті: напишіть spec.md до того як починати промптити.
 Різниця відчутна вже після першої спроби — менше "а я мав на увазі інше".
 -->
+
+---
+layout: center
+---
+
+# Що почати використовувати завтра?
+
+<div class="mt-8 text-left">
+
+<v-clicks>
+
+<div class="p-3 my-3 bg-blue-500 bg-opacity-10 rounded-lg">
+
+**Крок 1:** Встановити Cursor або GitHub Copilot (10 хвилин)
+
+</div>
+
+<div class="p-3 my-3 bg-green-500 bg-opacity-10 rounded-lg">
+
+**Крок 2:** Створити `.cursorrules` або `AGENTS.md` для вашого проекту (30 хвилин)
+
+</div>
+
+<div class="p-3 my-3 bg-purple-500 bg-opacity-10 rounded-lg">
+
+**Крок 3:** Спробувати Agent mode для рутинної задачі (1 година)
+
+</div>
+
+<div class="p-3 my-3 bg-yellow-500 bg-opacity-10 rounded-lg">
+
+**Крок 4:** Поділитися досвідом з командою та створити спільні правила
+
+</div>
+
+</v-clicks>
+
+</div>
 
 ---
 
