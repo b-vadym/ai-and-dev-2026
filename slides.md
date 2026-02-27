@@ -2033,6 +2033,59 @@ layout: center
 
 
 ---
+
+# Коли AI-агент "передозував"
+
+<div class="grid grid-cols-2 gap-8 mt-6">
+
+<div>
+
+### Що сталося
+
+<v-clicks>
+
+- Amazon **Kiro** (agentic IDE) отримав задачу виправити проблему
+- Вирішив — **знести і відтворити середовище** з нуля
+- Результат: **13-годинний аутаж AWS** (грудень 2025)
+- Amazon офіційно: "людська помилка — некоректні права доступу"
+
+</v-clicks>
+
+</div>
+
+<div>
+
+### Урок
+
+<v-clicks>
+
+- Агент діє в межах наданих прав — **мінімальні привілеї обов'язкові**
+- Розробники делегують AI і **втрачають навичку розуміти систему**
+- Guardrails — не параноя, а необхідність у production
+- AI не "розуміє" наслідків — це завжди відповідальність людини
+
+</v-clicks>
+
+
+
+</div>
+
+</div>
+<div v-click class="mt-4 p-3 bg-red-500 bg-opacity-10 rounded-lg text-sm">
+⚠️ Чим більше автономії агента — тим важливіший контроль доступу
+</div>
+<div class="mt-4 text-xs opacity-40 text-right">
+<a href="https://dou.ua/forums/topic/58059/" target="_blank">dou.ua — Amazon Kiro overdid it (лют. 2026)</a>
+</div>
+
+<!--
+Реальний кейс: Amazon Kiro (agentic coding tool) спричинив 13-годинний аутаж AWS Cost Explorer.
+Amazon офіційно звинуватив людей (misconfigured access controls), але суть не міняється.
+Ключовий коментар від інженера Amazon: розробники все більше покладаються на AI і втрачають критичні навички та пильність.
+Урок: ніколи не давайте AI надмірних привілеїв. Principle of least privilege + guardrails = must have.
+-->
+
+---
 layout: center
 ---
 
