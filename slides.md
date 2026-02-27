@@ -837,10 +837,17 @@ Anthropic: "Find the <span class="text-blue-400 font-bold">smallest possible set
 </div>
 
 ---
+layout: section
+---
+
+# Tools
+
+---
 
 # Function Calling — AI отримує інструменти
 
 OpenAI 2023: модель може викликати ваші функції замість того щоб просто відповідати текстом.
+<span class="text-xs opacity-40"><a href="https://developers.openai.com/api/docs/guides/function-calling/" target="_blank">developers.openai.com/api/docs/guides/function-calling</a></span>
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
