@@ -1348,17 +1348,11 @@ Cursor, Copilot, Claude Code — у кожного **свій формат** і 
 
 </div>
 
-<div v-click class="mt-6 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-sm text-center border border-blue-500 border-opacity-20">
-
-**Рішення:** Skills — модульні, переносні пакети знань для агента
-
-</div>
-
 ---
 
 # Skills — модульні знання для агента
 
-Skills — це `SKILL.md` файли які агент завантажує коли вони потрібні. Не просто правила — повноцінні інструкції з логікою.
+Папка з `SKILL.md` — інструкції + скрипти + ресурси. Агент **автоматично** визначає і завантажує потрібний skill.
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
@@ -1384,33 +1378,32 @@ WebTestCase, PHPUnit 10, Symfony 7
 2. Для кожного: 200, 400, 401, 404
 3. Mock зовнішніх сервісів
 4. AAA: Arrange / Act / Assert
-
-## Приклад назви
-testCreateUserReturns201Created()
 ```
 
 </div>
 
 <div>
 
-### Де зберігаються
+### 4 ключові властивості
 
-```
-# Глобальні (всі проекти)
-~/.agents/skills/
-  └── functional-tests/
-      └── SKILL.md
+<v-clicks>
 
-# Проектні
-.agent/skills/
-  └── deploy/
-      └── SKILL.md
-```
+- 🧩 **Composable** — skills стекаються разом автоматично
+- 🚀 **Portable** — той самий формат для Claude.ai, Claude Code і API
+- ⚡ **Efficient** — завантажується тільки коли потрібен
+- 💪 **Powerful** — може виконувати код, не лише давати інструкції
+
+</v-clicks>
 
 <div v-click class="mt-4 p-3 bg-green-500 bg-opacity-10 rounded-lg text-sm">
 
-**Ключова різниця від rules:**<br/>
-Skill завантажується **тільки коли потрібен** — не засмічує контекст постійно
+`description` — ключове поле. Саме за ним Claude вирішує **коли автоматично завантажити** skill
+
+</div>
+
+<div v-click class="mt-2 text-xs opacity-40 text-right">
+
+<a href="https://claude.com/blog/skills" target="_blank">claude.com/blog/skills</a>
 
 </div>
 
@@ -1426,44 +1419,50 @@ Skill завантажується **тільки коли потрібен** �
 
 <div>
 
-### Готові skills з екосистеми
+### Офіційний marketplace (Claude Code)
 
 ```bash
-# Пошук
-npx skills find symfony tests
+# Підключити репозиторій Anthropic
+/plugin marketplace add anthropics/skills
 
-# Встановлення глобально
-npx skills add owner/repo@skill-name -g
-
-# Перевірити оновлення
-npx skills check
+# Встановити набір skills
+/plugin install document-skills@anthropic-agent-skills
+/plugin install example-skills@anthropic-agent-skills
 ```
 
-<div class="mt-3 text-xs opacity-50">Каталог: skills.sh</div>
+<div class="mt-3 p-2 bg-white bg-opacity-5 rounded text-xs">
+
+78k ⭐ <a href="https://github.com/anthropics/skills" target="_blank" class="opacity-60">github.com/anthropics/skills</a><br/>
+Категорії: Documents · Development · Creative · Enterprise
+
+</div>
 
 </div>
 
 <div>
 
-### Створити свій
-
-```bash
-npx skills init my-deploy-skill
-```
+### Створити свій skill
 
 ```
-my-deploy-skill/
-└── SKILL.md   ← frontmatter + інструкції
+.agent/skills/
+└── functional-tests/
+    └── SKILL.md
 ```
 
 <v-clicks>
 
-- Описати в `description` коли використовувати
-- Додати покрокові інструкції
-- Включити приклади коду проекту
-- Зберегти в `.agent/skills/` або `~/.agents/skills/`
+- `name` — унікальний ідентифікатор (kebab-case)
+- `description` — повний опис **коли** використовувати
+- Покрокові інструкції в тілі файлу
+- Можна додати скрипти, шаблони, приклади
 
 </v-clicks>
+
+<div v-click class="mt-3 p-2 bg-blue-500 bg-opacity-10 rounded text-xs">
+
+Виклик: просто згадай в чаті або через `/назва-скілу`
+
+</div>
 
 </div>
 
