@@ -740,21 +740,6 @@ Anthropic: "Find the <span class="text-blue-400 font-bold">smallest possible set
 
 <div class="grid grid-cols-2 gap-8 mt-6">
 
-<div class="p-4 bg-blue-500 bg-opacity-10 rounded-xl border border-blue-500 border-opacity-20">
-
-### Автоматично — Semantic Search
-
-<v-clicks>
-
-- Cursor індексує весь проект у фоні
-- Пошук за **змістом**, не за текстом
-- _"Де обробляється автентифікація?"_ → знайде весь пов'язаний код
-- Агент сам вирішує які файли взяти
-
-</v-clicks>
-
-</div>
-
 <div class="p-4 bg-purple-500 bg-opacity-10 rounded-xl border border-purple-500 border-opacity-20">
 
 ### Явно — @Mentions
@@ -771,6 +756,21 @@ Anthropic: "Find the <span class="text-blue-400 font-bold">smallest possible set
 
 </div>
 
+
+<div class="p-4 bg-blue-500 bg-opacity-10 rounded-xl border border-blue-500 border-opacity-20">
+
+### Автоматично — Semantic Search
+
+<v-clicks>
+
+- Cursor індексує весь проект у фоні
+- Пошук за **змістом**, не за текстом
+- _"Де обробляється автентифікація?"_ → знайде весь пов'язаний код
+- Агент сам вирішує які файли взяти
+
+</v-clicks>
+
+</div>
 </div>
 
 ---
