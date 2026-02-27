@@ -1181,6 +1181,15 @@ description: Написати функціональні тести контро
 </div>
 
 ---
+layout: section
+transition: fade
+---
+
+# Rules & Instructions
+
+Як керувати поведінкою AI-агента
+
+---
 
 # Rules & Instructions: контекст на автопілоті
 
@@ -1233,18 +1242,7 @@ applyTo: "**/*Test.php"
 </div>
 
 </div>
-
 ---
-layout: section
-transition: fade
----
-
-# Rules & Instructions
-
-Як керувати поведінкою AI-агента
-
----
-
 # Cursor: Commands, Rules, Skills
 
 <div class="grid grid-cols-3 gap-8 mt-8">
