@@ -902,10 +902,9 @@ OpenAI 2023: модель може викликати ваші функції з
 ### Проблема до MCP
 
 ```
-Cursor → Jira    (своя інтеграція)
 Cursor → GitHub  (своя інтеграція)
-Copilot → Jira   (своя інтеграція)
 Copilot → GitHub (своя інтеграція)
+Claude code → GitHub (своя інтеграція)
 ...
 ```
 
@@ -919,7 +918,7 @@ Copilot → GitHub (своя інтеграція)
 
 ```
 Cursor  ─┐
-Claude  ─┤─ MCP ─── Jira
+Claude  ─┤─ MCP ─── Web Browser
 Copilot ─┘       ├── GitHub
                  ├── PostgreSQL
                  └── Figma
@@ -1060,6 +1059,57 @@ Anthropic відкрили специфікацію, тому конкурент
 </div>
 
 </div>
+
+</div>
+
+---
+
+# Context7 — актуальна документація в контексті
+
+MCP-сервер який підтягує **свіжу документацію** будь-якої бібліотеки прямо в контекст агента.
+
+<div class="grid grid-cols-2 gap-8 mt-4">
+
+<div>
+
+### Проблема без Context7
+
+<v-clicks>
+
+- AI навчений на даних до певної дати
+- Знає старі API, яких вже немає
+- Галюцинує методи і параметри
+- `React 18` → AI відповідає про `React 16`
+
+</v-clicks>
+
+</div>
+
+<div>
+
+### З Context7
+
+<v-clicks>
+
+- Агент запитує актуальну документацію в реальному часі
+- Завжди правильна версія і синтаксис
+- Підтримує тисячі бібліотек
+
+</v-clicks>
+
+<div v-click class="mt-4 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-xs font-mono border border-blue-500 border-opacity-20">
+
+use context7 mcp to get docs for react 19
+
+</div>
+
+</div>
+
+</div>
+
+<div v-click class="mt-4 text-xs opacity-40 text-right">
+
+<a href="https://context7.com" target="_blank">context7.com</a>
 
 </div>
 
