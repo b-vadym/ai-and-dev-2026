@@ -208,7 +208,7 @@ transition: fade
 <v-clicks>
 
 <div class="flex items-center gap-4 p-4 bg-white bg-opacity-5 rounded-xl">
-  <span class="text-2xl">🏟️</span>
+  <img src="/img/arena-logo.svg" class="w-8 h-8 object-contain" />
   <div class="flex-1">
     <span class="font-semibold">LMArena</span>
     <span class="opacity-60 ml-2 text-sm">— сліпе порівняння моделей людьми, ELO-рейтинг</span>
@@ -217,7 +217,7 @@ transition: fade
 </div>
 
 <div class="flex items-center gap-4 p-4 bg-white bg-opacity-5 rounded-xl">
-  <span class="text-2xl">🐛</span>
+  <img src="/img/swebench-logo.svg" class="w-8 h-8 object-contain" />
   <div class="flex-1">
     <span class="font-semibold">SWE-bench</span>
     <span class="opacity-60 ml-2 text-sm">— реальні GitHub issues, агент має знайти і зафіксити баг</span>
@@ -226,7 +226,7 @@ transition: fade
 </div>
 
 <div class="flex items-center gap-4 p-4 bg-white bg-opacity-5 rounded-xl">
-  <span class="text-2xl">📊</span>
+  <img src="/img/aider-logo.svg" class="w-8 h-8 object-contain" />
   <div class="flex-1">
     <span class="font-semibold">Aider Polyglot Leaderboard</span>
     <span class="opacity-60 ml-2 text-sm">— coding benchmark по кількох мовах</span>
@@ -235,7 +235,7 @@ transition: fade
 </div>
 
 <div class="flex items-center gap-4 p-4 bg-white bg-opacity-5 rounded-xl">
-  <span class="text-2xl">⚡</span>
+  <img src="/img/livecodebench-logo.svg" class="w-8 h-8 object-contain" />
   <div class="flex-1">
     <span class="font-semibold">LiveCodeBench</span>
     <span class="opacity-60 ml-2 text-sm">— свіжі задачі з LeetCode/Codeforces, без витоку в тренінг</span>
