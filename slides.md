@@ -322,7 +322,7 @@ class: text-center
 <div class="grid grid-cols-2 gap-8 mt-4 items-center">
 
 <div>
-<img src="https://code.visualstudio.com/assets/docs/copilot/core-concepts/agent-loop.png" class="w-full rounded-lg" />
+<img src="/img/agent-loop.png" class="w-full rounded-lg" />
 <div class="text-xs opacity-30 mt-2"><a href="https://code.visualstudio.com/docs/copilot/core-concepts#_agent-loop" target="_blank">code.visualstudio.com — GitHub Copilot Core Concepts</a></div>
 </div>
 
@@ -331,9 +331,9 @@ class: text-center
 <v-clicks>
 
 - **Understand** — читає файли, шукає по кодбейсу, вивчає документацію
-- **Act** — редагує код, виконує команди, встановлює залежності, викликає API
-- **Validate** — запускає тести, перевіряє помилки компілятора, ревьюає зміни
-- Якщо щось не так — **ітерує** знову
+- **Act** — редагує код, запускає команди, встановлює залежності, викликає API
+- **Observe** — дивиться на результат: помилки компілятора, вивід тестів, diff
+- **Iterate** — якщо щось не так, повертається до Understand і пробує знову
 
 </v-clicks>
 
