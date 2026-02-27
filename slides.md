@@ -783,48 +783,40 @@ layout: section
 
 # Function Calling — AI отримує інструменти
 
-OpenAI 2023: модель може викликати ваші функції замість того щоб просто відповідати текстом.
-<span class="text-xs opacity-40"><a href="https://developers.openai.com/api/docs/guides/function-calling/" target="_blank">developers.openai.com/api/docs/guides/function-calling</a></span>
+<div class="grid grid-cols-2 gap-8 mt-4 items-center">
 
-<div class="grid grid-cols-2 gap-6 mt-4">
+<div class="flex flex-col items-center">
+  <img src="/img/function-calling.png" class="max-h-[45vh] object-contain rounded-lg" />
+  <div class="text-xs opacity-60 mt-2"><a href="https://platform.openai.com/docs/guides/function-calling" target="_blank">platform.openai.com — Function Calling</a></div>
+</div>
 
-<div>
-
-### Як це працює
+<div class="flex flex-col gap-3 text-sm">
 
 <v-clicks>
 
-- Описуєш функцію у JSON Schema
-- Модель вирішує коли її викликати
-- Повертає аргументи → ти виконуєш → передаєш результат назад
-- Модель формує фінальну відповідь
+<div class="p-3 bg-white bg-opacity-5 rounded-lg">
+  1️⃣ Описуєш AI що за функції існують (JSON Schema)
+</div>
+
+<div class="p-3 bg-white bg-opacity-5 rounded-lg">
+  2️⃣ AI вирішує коли і яку викликати — і з якими аргументами
+</div>
+
+<div class="p-3 bg-white bg-opacity-5 rounded-lg">
+  3️⃣ Ти виконуєш функцію і повертаєш результат назад
+</div>
+
+<div class="p-3 bg-white bg-opacity-5 rounded-lg">
+  4️⃣ AI формує фінальну відповідь на основі результату
+</div>
+
+<div class="p-3 bg-yellow-500 bg-opacity-10 rounded-lg border border-yellow-500 border-opacity-20">
+  ⚠️ Кожен провайдер — свій формат. MCP вирішує цю проблему.
+</div>
 
 </v-clicks>
 
 </div>
-
-<div v-click>
-
-```json
-{
-  "name": "get_user",
-  "description": "Отримати дані юзера з БД",
-  "parameters": {
-    "type": "object",
-    "properties": {
-      "user_id": { "type": "integer" }
-    }
-  }
-}
-```
-
-</div>
-
-</div>
-
-<div v-click class="mt-4 p-3 bg-yellow-500 bg-opacity-10 rounded-lg text-sm border border-yellow-500 border-opacity-20">
-
-**Проблема:** кожен провайдер — свій формат. Cursor інтегрує по-своєму, Copilot — по-своєму, Claude — по-своєму.
 
 </div>
 
