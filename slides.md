@@ -1446,6 +1446,11 @@ npx skills add slidevjs/slidev
 
 </div>
 
+<div class="mt-4 p-3 bg-purple-500 bg-opacity-10 rounded-lg text-sm">
+📚 <a href="https://learn.deeplearning.ai/courses/agent-skills-with-anthropic" target="_blank" class="text-purple-300 hover:underline">DeepLearning.AI — Agent Skills with Anthropic</a>
+<span class="opacity-60 ml-2">· 12 уроків · ~3 год · безкоштовно</span>
+</div>
+
 ---
 
 # Еволюція управління агентом
