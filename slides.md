@@ -712,7 +712,7 @@ layout: center
 
 ```
 Endpoint для створення юзера.
-Стек: Symfony 7, API Platform.
+Стек: Symfony 7, Doctrine ORM.
 Приклад: src/Entity/Product.php
 Валідація: Assert атрибути.
 Тести: tests/Api/
@@ -735,10 +735,9 @@ Endpoint для створення юзера.
 <v-clicks>
 
 - **Rules файли** — автоматично додають контекст
-- **Memory Bank** — AI знає проект між сесіями
 - **Короткі сесії** — менше drift
 - **MCP** — AI сам бере потрібне з БД, GitHub
-- **SDD** — spec як джерело правди
+- **Memory** — AI знає проект між сесіями
 
 </v-clicks>
 
