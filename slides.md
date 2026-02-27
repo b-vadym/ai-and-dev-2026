@@ -41,19 +41,19 @@ class: text-center
 
 <div class="grid grid-cols-3 gap-12 mt-12">
   <div>
-    <div class="text-6xl font-bold text-blue-400">97%</div>
+    <div class="text-6xl font-bold text-blue-400">73%</div>
     <div class="mt-2 text-sm opacity-70">розробників використовують AI-інструменти</div>
-    <div class="mt-1 text-xs opacity-40">GitHub Developer Survey 2025</div>
+    <div class="mt-1 text-xs opacity-40"><a href="https://github.blog/news-insights/octoverse/octoverse-2024/" target="_blank" class="underline">GitHub Octoverse 2024</a></div>
   </div>
   <div>
-    <div class="text-6xl font-bold text-green-400">78%</div>
-    <div class="mt-2 text-sm opacity-70">компаній інтегрували AI в розробку</div>
-    <div class="mt-1 text-xs opacity-40">McKinsey Tech Report 2025</div>
+    <div class="text-6xl font-bold text-green-400">88%</div>
+    <div class="mt-2 text-sm opacity-70">компаній використовують AI хоча б в одній функції</div>
+    <div class="mt-1 text-xs opacity-40"><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" class="underline">McKinsey State of AI 2025</a></div>
   </div>
   <div>
     <div class="text-6xl font-bold text-purple-400">55%</div>
     <div class="mt-2 text-sm opacity-70">швидше виконуються типові задачі з AI</div>
-    <div class="mt-1 text-xs opacity-40">Google Research 2025</div>
+    <div class="mt-1 text-xs opacity-40"><a href="https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/" target="_blank" class="underline">GitHub Copilot Research, 2022</a></div>
   </div>
 </div>
 
@@ -539,6 +539,239 @@ layout: center
 
 ---
 
+# Context Engineering: дві крайнощі
+
+<div class="grid grid-cols-2 gap-8 mt-8">
+
+<div class="p-4 bg-red-500 bg-opacity-10 rounded-lg">
+
+### Замало контексту
+
+```
+Напиши API endpoint для створення юзера
+```
+
+<v-clicks>
+
+- AI вигадує архітектуру сам
+- Generic код, не для вашого проекту
+- Доведеться переписувати
+
+</v-clicks>
+
+</div>
+
+<div class="p-4 bg-red-500 bg-opacity-10 rounded-lg">
+
+### Забагато контексту
+
+```
+Ось весь проект, всі файли, вся
+документація, всі тести...
+Зроби endpoint.
+```
+
+<v-clicks>
+
+- Context rot — модель "губиться"
+- Agent drift — робить не те
+- Дорого (токени = гроші)
+
+</v-clicks>
+
+</div>
+
+</div>
+
+---
+
+# Context Rot — довший контекст = гірший результат
+
+Дослідження Chroma (2025): продуктивність моделей **суттєво падає** зі збільшенням контексту.
+
+<div class="grid grid-cols-2 gap-6 mt-4">
+
+<div>
+
+<img src="https://research.trychroma.com/img/context_rot/hero_plot.png" class="w-full rounded-lg" />
+<div class="text-xs opacity-30 mt-1"><a href="https://research.trychroma.com/context-rot" target="_blank">research.trychroma.com/context-rot</a></div>
+
+</div>
+
+<div class="text-sm">
+
+### Що знайшли (18 моделей: GPT-4.1, Claude 4, Gemini 2.5...)
+
+<v-clicks>
+
+- Фокусований контекст (~300 токенів) vs повний (~113k) — **разюча різниця**
+- При **10 000 словах** деградація різко зростає у всіх моделей
+- Навіть один "відволікаючий" елемент знижує точність
+- Парадокс: **перемішаний** контекст обробляється краще ніж логічно структурований
+
+</v-clicks>
+
+<div v-click class="mt-4 p-3 bg-red-500 bg-opacity-10 rounded-lg text-xs border border-red-500 border-opacity-20">
+
+Більше контексту ≠ кращий результат.<br/>
+Моделі не читають контекст рівномірно — увага розсіюється.
+
+</div>
+
+</div>
+
+</div>
+
+---
+
+# Як контекст ламається — 4 типи збоїв
+
+<div class="grid grid-cols-2 gap-4 mt-4 text-sm">
+
+<div class="p-3 bg-red-500 bg-opacity-10 rounded-lg border border-red-500 border-opacity-20">
+
+**☠️ Context Poisoning**
+
+Галюцинація потрапляє в контекст і далі підсилює себе. Агент будує стратегію на основі вигаданих даних.
+
+</div>
+
+<div class="p-3 bg-orange-500 bg-opacity-10 rounded-lg border border-orange-500 border-opacity-20">
+
+**😵 Context Distraction**
+
+При великому контексті модель повторює старі паттерни замість нового міркування.
+
+</div>
+
+<div class="p-3 bg-yellow-500 bg-opacity-10 rounded-lg border border-yellow-500 border-opacity-20">
+
+**🌫️ Context Confusion**
+
+Зайва інформація заважає. Llama 3.1 8B впоралася з 19 інструментами, але "провалилася" з 46.
+
+</div>
+
+<div class="p-3 bg-purple-500 bg-opacity-10 rounded-lg border border-purple-500 border-opacity-20">
+
+**⚔️ Context Clash**
+
+Суперечлива інформація з різних джерел. Microsoft/Salesforce: -39% точності через накопичені протиріччя.
+
+</div>
+
+</div>
+
+<div class="text-xs opacity-30 mt-4"><a href="https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html" target="_blank">dbreunig.com — How Contexts Fail and How to Fix Them</a></div>
+
+---
+
+# Agent Drift
+
+**Визначення:** Поступове відхилення AI-агента від поставленої задачі.
+
+<div class="grid grid-cols-2 gap-8 mt-4">
+
+<div>
+
+### Математика drift
+
+<div class="mt-4 p-4 bg-red-500 bg-opacity-10 rounded-lg font-mono text-center">
+  <div class="text-sm opacity-60 mb-2">Якщо кожен крок вірний на 99%:</div>
+  <div class="text-xl"><code>pow(0.99, 100) = 0.366</code></div>
+  <div class="text-sm opacity-60 mt-2">100 кроків → <span class="text-red-400 font-bold">лише 37% шанс</span> що все правильно</div>
+</div>
+
+<div class="mt-3 text-xs opacity-50">
+
+| Кроків | pow(0.99, n) | Результат |
+|---|---|---|
+| 10 | 0.904 | Ще ок |
+| 50 | 0.605 | Підкидаєш монетку |
+| 100 | 0.366 | Скоріш за все зламано |
+
+</div>
+
+</div>
+
+<div>
+
+### Як боротися
+
+<v-clicks>
+
+- Розбивати задачі на менші частини
+- Чіткі правила та обмеження (Rules)
+- Review проміжних результатів
+- Нова сесія для нової задачі
+- Git — завжди можна відкатити
+
+</v-clicks>
+
+<div v-click class="mt-3 p-2 bg-yellow-500 bg-opacity-10 rounded-lg text-xs">
+
+💡 "Попросив додати кнопку — агент відрефакторив пів проекту і переписав роутинг"
+
+</div>
+
+</div>
+
+</div>
+
+---
+
+# Рішення: правильний контекст
+
+<div class="grid grid-cols-2 gap-8 mt-6">
+
+<div class="p-4 bg-green-500 bg-opacity-10 rounded-lg">
+
+### Приклад правильного контексту
+
+```
+Endpoint для створення юзера.
+Стек: Symfony 7, API Platform.
+Приклад: src/Entity/Product.php
+Валідація: Assert атрибути.
+Тести: tests/Api/
+```
+
+<v-clicks>
+
+- Мінімум потрібної інформації
+- Конкретні приклади з проекту
+- Чіткі обмеження і конвенції
+
+</v-clicks>
+
+</div>
+
+<div>
+
+### Як цього досягти
+
+<v-clicks>
+
+- **Rules файли** — автоматично додають контекст
+- **Memory Bank** — AI знає проект між сесіями
+- **Короткі сесії** — менше drift
+- **MCP** — AI сам бере потрібне з БД, GitHub
+- **SDD** — spec як джерело правди
+
+</v-clicks>
+
+<div v-click class="mt-4 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-xs">
+
+Anthropic: "Find the <span class="text-blue-400 font-bold">smallest possible set</span> of high-signal tokens that maximize the desired outcome"
+
+</div>
+
+</div>
+
+</div>
+
+---
+
 # Що входить в контекст AI-агента
 
 <div class="grid grid-cols-2 gap-8 mt-6">
@@ -637,9 +870,7 @@ layout: center
 
 Збережені шаблони для задач які виконуєш постійно — не пишеш щоразу, викликаєш одним кліком.
 
-<div class="grid grid-cols-2 gap-6 mt-4">
-
-<div>
+<div class="mt-6 max-w-xl mx-auto">
 
 ### GitHub Copilot — `.github/prompts/`
 
@@ -655,25 +886,6 @@ SQL ін'єкції, N+1 запити.
 ```
 
 <div class="text-xs opacity-50 mt-2">Викликається через <code>/review</code> в Copilot Chat</div>
-
-</div>
-
-<div>
-
-### Claude Code — `.claude/commands/`
-
-```markdown
-# /project:review
-
-Зроби code review цього коду.
-Перевір: SOLID, PSR-12, безпеку,
-SQL ін'єкції, N+1 запити.
-Дай конкретні пропозиції з прикладами.
-```
-
-<div class="text-xs opacity-50 mt-2">Викликається через <code>/project:review</code> в Claude Code</div>
-
-</div>
 
 </div>
 
@@ -1633,239 +1845,6 @@ Cursor індексує весь проект і шукає за **змісто�
 
 Cursor поєднує **grep + semantic** разом — точність тексту + розуміння змісту.<br/>
 Індекс оновлюється кожні 5 хв автоматично.
-
-</div>
-
-</div>
-
-</div>
-
----
-
-# Context Engineering: дві крайнощі
-
-<div class="grid grid-cols-2 gap-8 mt-8">
-
-<div class="p-4 bg-red-500 bg-opacity-10 rounded-lg">
-
-### Замало контексту
-
-```
-Напиши API endpoint для створення юзера
-```
-
-<v-clicks>
-
-- AI вигадує архітектуру сам
-- Generic код, не для вашого проекту
-- Доведеться переписувати
-
-</v-clicks>
-
-</div>
-
-<div class="p-4 bg-red-500 bg-opacity-10 rounded-lg">
-
-### Забагато контексту
-
-```
-Ось весь проект, всі файли, вся
-документація, всі тести...
-Зроби endpoint.
-```
-
-<v-clicks>
-
-- Context rot — модель "губиться"
-- Agent drift — робить не те
-- Дорого (токени = гроші)
-
-</v-clicks>
-
-</div>
-
-</div>
-
----
-
-# Context Rot — довший контекст = гірший результат
-
-Дослідження Chroma (2025): продуктивність моделей **суттєво падає** зі збільшенням контексту.
-
-<div class="grid grid-cols-2 gap-6 mt-4">
-
-<div>
-
-<img src="https://research.trychroma.com/img/context_rot/hero_plot.png" class="w-full rounded-lg" />
-<div class="text-xs opacity-30 mt-1"><a href="https://research.trychroma.com/context-rot" target="_blank">research.trychroma.com/context-rot</a></div>
-
-</div>
-
-<div class="text-sm">
-
-### Що знайшли (18 моделей: GPT-4.1, Claude 4, Gemini 2.5...)
-
-<v-clicks>
-
-- Фокусований контекст (~300 токенів) vs повний (~113k) — **разюча різниця**
-- При **10 000 словах** деградація різко зростає у всіх моделей
-- Навіть один "відволікаючий" елемент знижує точність
-- Парадокс: **перемішаний** контекст обробляється краще ніж логічно структурований
-
-</v-clicks>
-
-<div v-click class="mt-4 p-3 bg-red-500 bg-opacity-10 rounded-lg text-xs border border-red-500 border-opacity-20">
-
-Більше контексту ≠ кращий результат.<br/>
-Моделі не читають контекст рівномірно — увага розсіюється.
-
-</div>
-
-</div>
-
-</div>
-
----
-
-# Як контекст ламається — 4 типи збоїв
-
-<div class="grid grid-cols-2 gap-4 mt-4 text-sm">
-
-<div class="p-3 bg-red-500 bg-opacity-10 rounded-lg border border-red-500 border-opacity-20">
-
-**☠️ Context Poisoning**
-
-Галюцинація потрапляє в контекст і далі підсилює себе. Агент будує стратегію на основі вигаданих даних.
-
-</div>
-
-<div class="p-3 bg-orange-500 bg-opacity-10 rounded-lg border border-orange-500 border-opacity-20">
-
-**😵 Context Distraction**
-
-При великому контексті модель повторює старі паттерни замість нового міркування.
-
-</div>
-
-<div class="p-3 bg-yellow-500 bg-opacity-10 rounded-lg border border-yellow-500 border-opacity-20">
-
-**🌫️ Context Confusion**
-
-Зайва інформація заважає. Llama 3.1 8B впоралася з 19 інструментами, але "провалилася" з 46.
-
-</div>
-
-<div class="p-3 bg-purple-500 bg-opacity-10 rounded-lg border border-purple-500 border-opacity-20">
-
-**⚔️ Context Clash**
-
-Суперечлива інформація з різних джерел. Microsoft/Salesforce: -39% точності через накопичені протиріччя.
-
-</div>
-
-</div>
-
-<div class="text-xs opacity-30 mt-4"><a href="https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html" target="_blank">dbreunig.com — How Contexts Fail and How to Fix Them</a></div>
-
----
-
-# Agent Drift
-
-**Визначення:** Поступове відхилення AI-агента від поставленої задачі.
-
-<div class="grid grid-cols-2 gap-8 mt-4">
-
-<div>
-
-### Математика drift
-
-<div class="mt-4 p-4 bg-red-500 bg-opacity-10 rounded-lg font-mono text-center">
-  <div class="text-sm opacity-60 mb-2">Якщо кожен крок вірний на 99%:</div>
-  <div class="text-xl"><code>pow(0.99, 100) = 0.366</code></div>
-  <div class="text-sm opacity-60 mt-2">100 кроків → <span class="text-red-400 font-bold">лише 37% шанс</span> що все правильно</div>
-</div>
-
-<div class="mt-3 text-xs opacity-50">
-
-| Кроків | pow(0.99, n) | Результат |
-|---|---|---|
-| 10 | 0.904 | Ще ок |
-| 50 | 0.605 | Підкидаєш монетку |
-| 100 | 0.366 | Скоріш за все зламано |
-
-</div>
-
-</div>
-
-<div>
-
-### Як боротися
-
-<v-clicks>
-
-- Розбивати задачі на менші частини
-- Чіткі правила та обмеження (Rules)
-- Review проміжних результатів
-- Нова сесія для нової задачі
-- Git — завжди можна відкатити
-
-</v-clicks>
-
-<div v-click class="mt-3 p-2 bg-yellow-500 bg-opacity-10 rounded-lg text-xs">
-
-💡 "Попросив додати кнопку — агент відрефакторив пів проекту і переписав роутинг"
-
-</div>
-
-</div>
-
-</div>
-
----
-
-# Рішення: правильний контекст
-
-<div class="grid grid-cols-2 gap-8 mt-6">
-
-<div class="p-4 bg-green-500 bg-opacity-10 rounded-lg">
-
-### Приклад правильного контексту
-
-```
-Endpoint для створення юзера.
-Стек: Symfony 7, API Platform.
-Приклад: src/Entity/Product.php
-Валідація: Assert атрибути.
-Тести: tests/Api/
-```
-
-<v-clicks>
-
-- Мінімум потрібної інформації
-- Конкретні приклади з проекту
-- Чіткі обмеження і конвенції
-
-</v-clicks>
-
-</div>
-
-<div>
-
-### Як цього досягти
-
-<v-clicks>
-
-- **Rules файли** — автоматично додають контекст
-- **Memory Bank** — AI знає проект між сесіями
-- **Короткі сесії** — менше drift
-- **MCP** — AI сам бере потрібне з БД, GitHub
-- **SDD** — spec як джерело правди
-
-</v-clicks>
-
-<div v-click class="mt-4 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-xs">
-
-Anthropic: "Find the <span class="text-blue-400 font-bold">smallest possible set</span> of high-signal tokens that maximize the desired outcome"
 
 </div>
 
