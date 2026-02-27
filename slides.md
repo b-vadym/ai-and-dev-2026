@@ -959,28 +959,28 @@ Anthropic відкрили специфікацію, тому конкурент
 
 <div>
 
-### Цикл запиту
+### Приклад: Browser MCP + CDP
 
 <div class="mt-2 space-y-2 text-sm">
 
 <div v-click class="flex items-start gap-3 p-2 bg-blue-500 bg-opacity-10 rounded">
   <span class="text-blue-400 font-mono font-bold mt-0.5">1</span>
-  <span>Ти: <em>"Покажи структуру таблиці users"</em></span>
+  <span>Ти: <em>"Перевір форму реєстрації — чи немає помилок у консолі"</em></span>
 </div>
 
 <div v-click class="flex items-start gap-3 p-2 bg-white bg-opacity-5 rounded">
   <span class="text-gray-400 font-mono font-bold mt-0.5">2</span>
-  <span>Агент викликає MCP-сервер PostgreSQL з запитом</span>
+  <span>Агент через MCP відкриває Chrome DevTools Protocol</span>
 </div>
 
 <div v-click class="flex items-start gap-3 p-2 bg-white bg-opacity-5 rounded">
   <span class="text-gray-400 font-mono font-bold mt-0.5">3</span>
-  <span>MCP повертає реальну схему таблиці</span>
+  <span>Навігує на сторінку, заповнює форму, знімає скріншот, читає console.log</span>
 </div>
 
 <div v-click class="flex items-start gap-3 p-2 bg-green-500 bg-opacity-10 rounded">
   <span class="text-green-400 font-mono font-bold mt-0.5">4</span>
-  <span>Агент пише Entity з правильними типами та полями</span>
+  <span>Повертає: <em>"TypeError: cannot read 'email' — рядок 42 у form.js"</em> і фіксить</span>
 </div>
 
 </div>
