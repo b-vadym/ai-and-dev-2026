@@ -76,13 +76,16 @@ Karpathy — один з творців GPT-4. Якщо він каже "English
 layout: center
 ---
 
-# "За 1 годину те, що команда робила рік"
+# "Claude Code зробив за годину те, що команда будувала рік"
 
 <div class="mt-8 max-w-2xl mx-auto">
 
 <div class="p-6 bg-white bg-opacity-5 rounded-xl border border-gray-500 border-opacity-20">
 
-<div class="text-sm opacity-50 mb-4">Jaana Dogan · Principal Engineer @ Google</div>
+<div class="flex items-center gap-3 mb-4">
+  <span class="text-sm opacity-50">Jaana Dogan · Principal Engineer @ Google</span>
+  <span class="text-xs px-2 py-0.5 bg-blue-500 bg-opacity-20 border border-blue-500 border-opacity-30 rounded-full text-blue-300">Original · Jan 3, 2026</span>
+</div>
 
 <div class="text-xl leading-relaxed mb-4">
 
