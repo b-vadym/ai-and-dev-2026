@@ -766,6 +766,7 @@ Anthropic: "Find the <span class="text-blue-400 font-bold">smallest possible set
 - 📁 **Файли проекту** — код, конфіги, схеми
 - 🔧 **MCP Tools** — доступні інструменти та API
 - 📋 **Rules & Instructions** — правила проекту
+- ⚡ **Skills** — готові шаблони дій
 - 🗒️ **Memory / Notes** — нотатки між сесіями
 
 </v-clicks>
