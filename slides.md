@@ -265,46 +265,8 @@ class: text-center
 </div>
 
 ---
-class: text-center
----
 
 # Які бувають агенти для розробки?
-
-<div class="grid grid-cols-2 gap-6 mt-8 text-left max-w-3xl mx-auto">
-
-<div class="p-4 bg-blue-500 bg-opacity-10 rounded-xl border border-blue-500 border-opacity-30">
-  <div class="text-lg font-bold mb-2">🖥️ IDE-агенти</div>
-  <div class="text-xs opacity-60 mb-2 uppercase tracking-wide">Human in the Loop</div>
-  <div class="text-sm opacity-80">Cursor · GitHub Copilot · Windsurf</div>
-  <div class="text-xs opacity-50 mt-2">Щоденна розробка, ви контролюєте кожен крок</div>
-</div>
-
-<div class="p-4 bg-green-500 bg-opacity-10 rounded-xl border border-green-500 border-opacity-30">
-  <div class="text-lg font-bold mb-2">💻 CLI-агенти</div>
-  <div class="text-xs opacity-60 mb-2 uppercase tracking-wide">Terminal</div>
-  <div class="text-sm opacity-80">Claude Code · Aider · Gemini CLI</div>
-  <div class="text-xs opacity-50 mt-2">CI/CD, batch-операції, автоматизація</div>
-</div>
-
-<div class="p-4 bg-purple-500 bg-opacity-10 rounded-xl border border-purple-500 border-opacity-30">
-  <div class="text-lg font-bold mb-2">🎨 Спеціалізовані</div>
-  <div class="text-xs opacity-60 mb-2 uppercase tracking-wide">Domain-specific</div>
-  <div class="text-sm opacity-80">v0.dev · Bolt.new · Figma AI</div>
-  <div class="text-xs opacity-50 mt-2">Прототипи, UI mockups, швидкий MVP</div>
-</div>
-
-<div class="p-4 bg-orange-500 bg-opacity-10 rounded-xl border border-orange-500 border-opacity-30">
-  <div class="text-lg font-bold mb-2">🤖 Автономні</div>
-  <div class="text-xs opacity-60 mb-2 uppercase tracking-wide">Cloud / Background</div>
-  <div class="text-sm opacity-80">Devin · Copilot Workspace · Background Agents</div>
-  <div class="text-xs opacity-50 mt-2">Довгі задачі, паралельна робота</div>
-</div>
-
-</div>
-
----
-
-# Огляд типів агентів
 
 <div class="grid grid-cols-2 gap-6 mt-4 text-sm">
 
@@ -312,12 +274,11 @@ class: text-center
 
 ### 🖥️ IDE-агенти (Human in the Loop)
 
-- **Cursor** ($20/міс) — форк VS Code, agent mode, MCP
-- **GitHub Copilot** ($10-19) — autocomplete + chat + agent
-- **Windsurf** ($0-15) — Cascade, безкоштовний tier
+- **GitHub Copilot** — autocomplete + chat + agent
+- **Cursor** — форк VS Code, agent mode, MCP
+- **Windsurf** — Cascade, безкоштовний tier
 - **JetBrains AI** — для PhpStorm фанів
-
-**Коли:** Щоденна розробка, ви контролюєте кожен крок
+- **Kiro** (AWS) — spec-based агент
 
 </div>
 
@@ -326,10 +287,9 @@ class: text-center
 ### 💻 CLI-агенти (Terminal)
 
 - **Claude Code** — найпотужніший, PR + коміти
+- **OpenAI Codex CLI** — термінальний агент від OpenAI
 - **Aider** — open source, будь-яка модель
 - **Gemini CLI** — безкоштовний, 1M контекст
-
-**Коли:** CI/CD, batch-операції, автоматизація
 
 </div>
 
@@ -337,11 +297,10 @@ class: text-center
 
 ### 🎨 Спеціалізовані
 
-- **v0.dev** ($20) — UI-компоненти (React/Tailwind)
+- **v0.dev** — UI-компоненти (React/Tailwind)
 - **Bolt.new / Lovable** — повні аплікації з промпту
+- **Aura** — landing pages, експорт у HTML / Figma
 - **Figma AI** — генерація дизайну
-
-**Коли:** Прототипи, UI mockups, швидкий MVP
 
 </div>
 
@@ -349,11 +308,9 @@ class: text-center
 
 ### 🤖 Автономні / Cloud
 
-- **Devin** (~$500) — "AI software engineer"
+- **Devin** (Cognition) — "AI software engineer"
 - **Copilot Workspace** — від issue до PR в GitHub
 - **Background Agents** (Cursor) — працюють паралельно
-
-**Коли:** Довгі задачі, паралельна робота, потребують нагляду
 
 </div>
 
