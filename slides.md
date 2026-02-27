@@ -799,26 +799,29 @@ Anthropic: "Find the <span class="text-blue-400 font-bold">smallest possible set
 
 ---
 
-# Агент не пам'ятає вас
+# Semantic Search — Cursor розуміє ваш код
+
+Cursor індексує весь проект і шукає за **змістом**, а не за текстом.
 
 <div class="grid grid-cols-2 gap-8 mt-6">
 
-<div class="p-4 bg-red-500 bg-opacity-10 rounded-lg">
+<div>
 
-### Кожна нова сесія — чистий аркуш
+### Grep vs Semantic Search
 
-<v-clicks>
+<div class="space-y-3 mt-2 text-sm">
 
-- Не знає вашого стеку
-- Не знає конвенцій команди
-- Не знає що вже обговорювали
-- Не знає які файли не чіпати
+<div class="p-3 bg-red-500 bg-opacity-10 rounded-lg">
+  <div class="font-bold mb-1">Grep (текстовий пошук)</div>
+  <div class="font-mono text-xs opacity-70">"де використовується UserService"</div>
+  <div class="text-xs opacity-50 mt-1">→ знайде лише точне співпадіння рядка</div>
+</div>
 
-</v-clicks>
-
-<div v-click class="mt-4 text-sm italic opacity-60">
-
-"Знову пояснюю що у нас Symfony і не треба використовувати Laravel-підходи..."
+<div v-click class="p-3 bg-green-500 bg-opacity-10 rounded-lg">
+  <div class="font-bold mb-1">Semantic Search</div>
+  <div class="font-mono text-xs opacity-70">"де обробляється автентифікація?"</div>
+  <div class="text-xs opacity-50 mt-1">→ знайде весь пов'язаний код по змісту</div>
+</div>
 
 </div>
 
@@ -826,19 +829,241 @@ Anthropic: "Find the <span class="text-blue-400 font-bold">smallest possible set
 
 <div>
 
-### Як вирішували це спочатку
+### Як це працює
 
 <v-clicks>
 
-- Копіювати контекст вручну щоразу
-- Починати кожен чат з довгого опису проекту
-- Сподіватися що AI "здогадається"
+- Код розбивається на блоки (функції, класи)
+- Кожен блок → вектор через AI-модель
+- Твій запит → вектор → порівняння
+- Результат: найрелевантніші фрагменти
 
 </v-clicks>
 
-<div v-click class="mt-6 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-sm">
+<div v-click class="mt-4 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-xs">
 
-**Рішення:** файли з інструкціями які читаються автоматично при кожній сесії
+Cursor поєднує **grep + semantic** разом — точність тексту + розуміння змісту.<br/>
+Індекс оновлюється кожні 5 хв автоматично.
+
+</div>
+
+</div>
+
+</div>
+
+---
+
+# Function Calling — AI отримує інструменти
+
+OpenAI 2023: модель може викликати ваші функції замість того щоб просто відповідати текстом.
+
+<div class="grid grid-cols-2 gap-6 mt-4">
+
+<div>
+
+### Як це працює
+
+<v-clicks>
+
+- Описуєш функцію у JSON Schema
+- Модель вирішує коли її викликати
+- Повертає аргументи → ти виконуєш → передаєш результат назад
+- Модель формує фінальну відповідь
+
+</v-clicks>
+
+</div>
+
+<div v-click>
+
+```json
+{
+  "name": "get_user",
+  "description": "Отримати дані юзера з БД",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "user_id": { "type": "integer" }
+    }
+  }
+}
+```
+
+</div>
+
+</div>
+
+<div v-click class="mt-4 p-3 bg-yellow-500 bg-opacity-10 rounded-lg text-sm border border-yellow-500 border-opacity-20">
+
+**Проблема:** кожен провайдер — свій формат. Cursor інтегрує по-своєму, Copilot — по-своєму, Claude — по-своєму.
+
+</div>
+
+---
+
+# MCP — Model Context Protocol
+
+<div class="grid grid-cols-2 gap-8 mt-4">
+
+<div>
+
+### Проблема до MCP
+
+```
+Cursor → Jira    (своя інтеграція)
+Cursor → GitHub  (своя інтеграція)
+Copilot → Jira   (своя інтеграція)
+Copilot → GitHub (своя інтеграція)
+...
+```
+
+<div class="text-sm opacity-60 mt-2">N агентів × M інструментів = N×M інтеграцій</div>
+
+</div>
+
+<div>
+
+### Після MCP
+
+```
+Cursor  ─┐
+Claude  ─┤─ MCP ─── Jira
+Copilot ─┘       ├── GitHub
+                 ├── PostgreSQL
+                 └── Figma
+```
+
+<div class="text-sm opacity-60 mt-2">N агентів + M інструментів = N+M інтеграцій</div>
+
+</div>
+
+</div>
+
+<div v-click class="mt-6 grid grid-cols-3 gap-4 text-sm">
+  <div class="p-2 bg-white bg-opacity-5 rounded-lg text-center">
+    <div class="font-bold text-blue-400">Відкритий стандарт</div>
+    <div class="text-xs opacity-60 mt-1">Anthropic, листопад 2024</div>
+  </div>
+  <div class="p-2 bg-white bg-opacity-5 rounded-lg text-center">
+    <div class="font-bold text-green-400">Будь-який агент</div>
+    <div class="text-xs opacity-60 mt-1">Cursor, Copilot, Claude Code</div>
+  </div>
+  <div class="p-2 bg-white bg-opacity-5 rounded-lg text-center">
+    <div class="font-bold text-purple-400">Open source</div>
+    <div class="text-xs opacity-60 mt-1">anthropic.com/news/model-context-protocol</div>
+  </div>
+</div>
+
+<!--
+MCP — це Game changer для enterprise. Замість n інтеграцій (Cursor→Jira, Copilot→Jira...) — один MCP сервер.
+Якщо у вас є внутрішні системи (Confluence, корпоративний Git, БД) — MCP дозволяє підключити їх до будь-якого агента.
+Anthropic відкрили специфікацію, тому конкуренти теж підтримують: OpenAI, Google.
+-->
+
+---
+
+# MCP — як це працює
+
+<div class="grid grid-cols-2 gap-8 mt-4">
+
+<div>
+
+### Цикл запиту
+
+<div class="mt-2 space-y-2 text-sm">
+
+<div v-click class="flex items-start gap-3 p-2 bg-blue-500 bg-opacity-10 rounded">
+  <span class="text-blue-400 font-mono font-bold mt-0.5">1</span>
+  <span>Ти: <em>"Покажи структуру таблиці users"</em></span>
+</div>
+
+<div v-click class="flex items-start gap-3 p-2 bg-white bg-opacity-5 rounded">
+  <span class="text-gray-400 font-mono font-bold mt-0.5">2</span>
+  <span>Агент викликає MCP-сервер PostgreSQL з запитом</span>
+</div>
+
+<div v-click class="flex items-start gap-3 p-2 bg-white bg-opacity-5 rounded">
+  <span class="text-gray-400 font-mono font-bold mt-0.5">3</span>
+  <span>MCP повертає реальну схему таблиці</span>
+</div>
+
+<div v-click class="flex items-start gap-3 p-2 bg-green-500 bg-opacity-10 rounded">
+  <span class="text-green-400 font-mono font-bold mt-0.5">4</span>
+  <span>Агент пише Entity з правильними типами та полями</span>
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+### Популярні MCP-сервери
+
+<div v-click class="grid grid-cols-2 gap-2 mt-2 text-xs">
+  <div class="p-2 bg-white bg-opacity-5 rounded">🗄️ <b>PostgreSQL</b><br/><span class="opacity-60">читає схему, робить запити</span></div>
+  <div class="p-2 bg-white bg-opacity-5 rounded">🐙 <b>GitHub</b><br/><span class="opacity-60">PR, issues, код</span></div>
+  <div class="p-2 bg-white bg-opacity-5 rounded">🌐 <b>Browser</b><br/><span class="opacity-60">відкриває, клікає, скріншоти</span></div>
+  <div class="p-2 bg-white bg-opacity-5 rounded">🎨 <b>Figma</b><br/><span class="opacity-60">читає дизайн → код</span></div>
+  <div class="p-2 bg-white bg-opacity-5 rounded">📋 <b>Jira</b><br/><span class="opacity-60">тікети, статуси</span></div>
+  <div class="p-2 bg-white bg-opacity-5 rounded">💬 <b>Slack</b><br/><span class="opacity-60">читає, пише канали</span></div>
+</div>
+
+</div>
+
+</div>
+
+---
+
+# MCP для нашого стеку
+
+<div class="grid grid-cols-2 gap-6 mt-4">
+
+<div>
+
+### `.cursor/mcp.json`
+
+```json
+{
+  "mcpServers": {
+    "postgres": {
+      "command": "npx",
+      "args": [
+        "-y", "@modelcontextprotocol/server-postgres",
+        "postgresql://localhost/myapp"
+      ]
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": { "GITHUB_TOKEN": "..." }
+    }
+  }
+}
+```
+
+</div>
+
+<div>
+
+### Що тепер може агент
+
+<div class="space-y-2 mt-2 text-sm">
+
+<div v-click class="p-2 bg-white bg-opacity-5 rounded">
+  💬 <em>"Подивись на структуру таблиці orders і напиши Entity"</em>
+  <div class="text-xs opacity-50 mt-1">→ читає БД → пише правильний PHP-клас</div>
+</div>
+
+<div v-click class="p-2 bg-white bg-opacity-5 rounded">
+  💬 <em>"Створи PR з описом з тікету #234"</em>
+  <div class="text-xs opacity-50 mt-1">→ читає GitHub issue → пише опис → відкриває PR</div>
+</div>
+
+<div v-click class="p-2 bg-white bg-opacity-5 rounded">
+  💬 <em>"Знайди всі запити де немає індексів"</em>
+  <div class="text-xs opacity-50 mt-1">→ аналізує схему БД → дає рекомендації</div>
+</div>
 
 </div>
 
@@ -1472,6 +1697,55 @@ public function delete(int $id): Response {
 
 ---
 
+# Агент не пам'ятає вас
+
+<div class="grid grid-cols-2 gap-8 mt-6">
+
+<div class="p-4 bg-red-500 bg-opacity-10 rounded-lg">
+
+### Кожна нова сесія — чистий аркуш
+
+<v-clicks>
+
+- Не знає вашого стеку
+- Не знає конвенцій команди
+- Не знає що вже обговорювали
+- Не знає які файли не чіпати
+
+</v-clicks>
+
+<div v-click class="mt-4 text-sm italic opacity-60">
+
+"Знову пояснюю що у нас Symfony і не треба використовувати Laravel-підходи..."
+
+</div>
+
+</div>
+
+<div>
+
+### Як вирішували це спочатку
+
+<v-clicks>
+
+- Копіювати контекст вручну щоразу
+- Починати кожен чат з довгого опису проекту
+- Сподіватися що AI "здогадається"
+
+</v-clicks>
+
+<div v-click class="mt-6 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-sm">
+
+**Рішення:** файли з інструкціями які читаються автоматично при кожній сесії
+
+</div>
+
+</div>
+
+</div>
+
+---
+
 # Memory Bank
 
 <div class="mt-6">
@@ -1555,280 +1829,6 @@ memory-bank/
 - Нехай AI сам оновлює свою пам'ять
 - Зберігайте в git разом з проектом
 - Використовуйте як onboarding для нових розробників
-
-</div>
-
-</div>
-
----
-
-# Function Calling — AI отримує інструменти
-
-OpenAI 2023: модель може викликати ваші функції замість того щоб просто відповідати текстом.
-
-<div class="grid grid-cols-2 gap-6 mt-4">
-
-<div>
-
-### Як це працює
-
-<v-clicks>
-
-- Описуєш функцію у JSON Schema
-- Модель вирішує коли її викликати
-- Повертає аргументи → ти виконуєш → передаєш результат назад
-- Модель формує фінальну відповідь
-
-</v-clicks>
-
-</div>
-
-<div v-click>
-
-```json
-{
-  "name": "get_user",
-  "description": "Отримати дані юзера з БД",
-  "parameters": {
-    "type": "object",
-    "properties": {
-      "user_id": { "type": "integer" }
-    }
-  }
-}
-```
-
-</div>
-
-</div>
-
-<div v-click class="mt-4 p-3 bg-yellow-500 bg-opacity-10 rounded-lg text-sm border border-yellow-500 border-opacity-20">
-
-**Проблема:** кожен провайдер — свій формат. Cursor інтегрує по-своєму, Copilot — по-своєму, Claude — по-своєму.
-
-</div>
-
----
-
-# MCP — Model Context Protocol
-
-<div class="grid grid-cols-2 gap-8 mt-4">
-
-<div>
-
-### Проблема до MCP
-
-```
-Cursor → Jira    (своя інтеграція)
-Cursor → GitHub  (своя інтеграція)
-Copilot → Jira   (своя інтеграція)
-Copilot → GitHub (своя інтеграція)
-...
-```
-
-<div class="text-sm opacity-60 mt-2">N агентів × M інструментів = N×M інтеграцій</div>
-
-</div>
-
-<div>
-
-### Після MCP
-
-```
-Cursor  ─┐
-Claude  ─┤─ MCP ─── Jira
-Copilot ─┘       ├── GitHub
-                 ├── PostgreSQL
-                 └── Figma
-```
-
-<div class="text-sm opacity-60 mt-2">N агентів + M інструментів = N+M інтеграцій</div>
-
-</div>
-
-</div>
-
-<div v-click class="mt-6 grid grid-cols-3 gap-4 text-sm">
-  <div class="p-2 bg-white bg-opacity-5 rounded-lg text-center">
-    <div class="font-bold text-blue-400">Відкритий стандарт</div>
-    <div class="text-xs opacity-60 mt-1">Anthropic, листопад 2024</div>
-  </div>
-  <div class="p-2 bg-white bg-opacity-5 rounded-lg text-center">
-    <div class="font-bold text-green-400">Будь-який агент</div>
-    <div class="text-xs opacity-60 mt-1">Cursor, Copilot, Claude Code</div>
-  </div>
-  <div class="p-2 bg-white bg-opacity-5 rounded-lg text-center">
-    <div class="font-bold text-purple-400">Open source</div>
-    <div class="text-xs opacity-60 mt-1">anthropic.com/news/model-context-protocol</div>
-  </div>
-</div>
-
-<!--
-MCP — це Game changer для enterprise. Замість n інтеграцій (Cursor→Jira, Copilot→Jira...) — один MCP сервер.
-Якщо у вас є внутрішні системи (Confluence, корпоративний Git, БД) — MCP дозволяє підключити їх до будь-якого агента.
-Anthropic відкрили специфікацію, тому конкуренти теж підтримують: OpenAI, Google.
--->
-
----
-
-# MCP — як це працює
-
-<div class="grid grid-cols-2 gap-8 mt-4">
-
-<div>
-
-### Цикл запиту
-
-<div class="mt-2 space-y-2 text-sm">
-
-<div v-click class="flex items-start gap-3 p-2 bg-blue-500 bg-opacity-10 rounded">
-  <span class="text-blue-400 font-mono font-bold mt-0.5">1</span>
-  <span>Ти: <em>"Покажи структуру таблиці users"</em></span>
-</div>
-
-<div v-click class="flex items-start gap-3 p-2 bg-white bg-opacity-5 rounded">
-  <span class="text-gray-400 font-mono font-bold mt-0.5">2</span>
-  <span>Агент викликає MCP-сервер PostgreSQL з запитом</span>
-</div>
-
-<div v-click class="flex items-start gap-3 p-2 bg-white bg-opacity-5 rounded">
-  <span class="text-gray-400 font-mono font-bold mt-0.5">3</span>
-  <span>MCP повертає реальну схему таблиці</span>
-</div>
-
-<div v-click class="flex items-start gap-3 p-2 bg-green-500 bg-opacity-10 rounded">
-  <span class="text-green-400 font-mono font-bold mt-0.5">4</span>
-  <span>Агент пише Entity з правильними типами та полями</span>
-</div>
-
-</div>
-
-</div>
-
-<div>
-
-### Популярні MCP-сервери
-
-<div v-click class="grid grid-cols-2 gap-2 mt-2 text-xs">
-  <div class="p-2 bg-white bg-opacity-5 rounded">🗄️ <b>PostgreSQL</b><br/><span class="opacity-60">читає схему, робить запити</span></div>
-  <div class="p-2 bg-white bg-opacity-5 rounded">🐙 <b>GitHub</b><br/><span class="opacity-60">PR, issues, код</span></div>
-  <div class="p-2 bg-white bg-opacity-5 rounded">🌐 <b>Browser</b><br/><span class="opacity-60">відкриває, клікає, скріншоти</span></div>
-  <div class="p-2 bg-white bg-opacity-5 rounded">🎨 <b>Figma</b><br/><span class="opacity-60">читає дизайн → код</span></div>
-  <div class="p-2 bg-white bg-opacity-5 rounded">📋 <b>Jira</b><br/><span class="opacity-60">тікети, статуси</span></div>
-  <div class="p-2 bg-white bg-opacity-5 rounded">💬 <b>Slack</b><br/><span class="opacity-60">читає, пише канали</span></div>
-</div>
-
-</div>
-
-</div>
-
----
-
-# MCP для нашого стеку
-
-<div class="grid grid-cols-2 gap-6 mt-4">
-
-<div>
-
-### `.cursor/mcp.json`
-
-```json
-{
-  "mcpServers": {
-    "postgres": {
-      "command": "npx",
-      "args": [
-        "-y", "@modelcontextprotocol/server-postgres",
-        "postgresql://localhost/myapp"
-      ]
-    },
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": { "GITHUB_TOKEN": "..." }
-    }
-  }
-}
-```
-
-</div>
-
-<div>
-
-### Що тепер може агент
-
-<div class="space-y-2 mt-2 text-sm">
-
-<div v-click class="p-2 bg-white bg-opacity-5 rounded">
-  💬 <em>"Подивись на структуру таблиці orders і напиши Entity"</em>
-  <div class="text-xs opacity-50 mt-1">→ читає БД → пише правильний PHP-клас</div>
-</div>
-
-<div v-click class="p-2 bg-white bg-opacity-5 rounded">
-  💬 <em>"Створи PR з описом з тікету #234"</em>
-  <div class="text-xs opacity-50 mt-1">→ читає GitHub issue → пише опис → відкриває PR</div>
-</div>
-
-<div v-click class="p-2 bg-white bg-opacity-5 rounded">
-  💬 <em>"Знайди всі запити де немає індексів"</em>
-  <div class="text-xs opacity-50 mt-1">→ аналізує схему БД → дає рекомендації</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
----
-
-# Semantic Search — Cursor розуміє ваш код
-
-Cursor індексує весь проект і шукає за **змістом**, а не за текстом.
-
-<div class="grid grid-cols-2 gap-8 mt-6">
-
-<div>
-
-### Grep vs Semantic Search
-
-<div class="space-y-3 mt-2 text-sm">
-
-<div class="p-3 bg-red-500 bg-opacity-10 rounded-lg">
-  <div class="font-bold mb-1">Grep (текстовий пошук)</div>
-  <div class="font-mono text-xs opacity-70">"де використовується UserService"</div>
-  <div class="text-xs opacity-50 mt-1">→ знайде лише точне співпадіння рядка</div>
-</div>
-
-<div v-click class="p-3 bg-green-500 bg-opacity-10 rounded-lg">
-  <div class="font-bold mb-1">Semantic Search</div>
-  <div class="font-mono text-xs opacity-70">"де обробляється автентифікація?"</div>
-  <div class="text-xs opacity-50 mt-1">→ знайде весь пов'язаний код по змісту</div>
-</div>
-
-</div>
-
-</div>
-
-<div>
-
-### Як це працює
-
-<v-clicks>
-
-- Код розбивається на блоки (функції, класи)
-- Кожен блок → вектор через AI-модель
-- Твій запит → вектор → порівняння
-- Результат: найрелевантніші фрагменти
-
-</v-clicks>
-
-<div v-click class="mt-4 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-xs">
-
-Cursor поєднує **grep + semantic** разом — точність тексту + розуміння змісту.<br/>
-Індекс оновлюється кожні 5 хв автоматично.
-
-</div>
 
 </div>
 
