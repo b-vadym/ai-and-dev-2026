@@ -959,7 +959,7 @@ Anthropic відкрили специфікацію, тому конкурент
 
 <div>
 
-### Приклад: Browser MCP + CDP
+### Приклад: Chrome DevTools MCP
 
 <div class="mt-2 space-y-2 text-sm">
 
@@ -970,7 +970,7 @@ Anthropic відкрили специфікацію, тому конкурент
 
 <div v-click class="flex items-start gap-3 p-2 bg-white bg-opacity-5 rounded">
   <span class="text-gray-400 font-mono font-bold mt-0.5">2</span>
-  <span>Агент через MCP відкриває Chrome DevTools Protocol</span>
+  <span>Агент викликає Chrome DevTools MCP</span>
 </div>
 
 <div v-click class="flex items-start gap-3 p-2 bg-white bg-opacity-5 rounded">
@@ -996,79 +996,18 @@ Anthropic відкрили специфікацію, тому конкурент
   <div class="p-2 bg-white bg-opacity-5 rounded">🐙 <b>GitHub</b><br/><span class="opacity-60">PR, issues, код</span></div>
   <div class="p-2 bg-white bg-opacity-5 rounded">🌐 <b>Browser</b><br/><span class="opacity-60">відкриває, клікає, скріншоти</span></div>
   <div class="p-2 bg-white bg-opacity-5 rounded">🎨 <b>Figma</b><br/><span class="opacity-60">читає дизайн → код</span></div>
-  <div class="p-2 bg-white bg-opacity-5 rounded">📋 <b>Jira</b><br/><span class="opacity-60">тікети, статуси</span></div>
-  <div class="p-2 bg-white bg-opacity-5 rounded">💬 <b>Slack</b><br/><span class="opacity-60">читає, пише канали</span></div>
 </div>
 
 </div>
 
 </div>
-
----
-
-# MCP для нашого стеку
-
-<div class="grid grid-cols-2 gap-6 mt-4">
-
-<div>
-
-### `.cursor/mcp.json`
-
-```json
-{
-  "mcpServers": {
-    "postgres": {
-      "command": "npx",
-      "args": [
-        "-y", "@modelcontextprotocol/server-postgres",
-        "postgresql://localhost/myapp"
-      ]
-    },
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": { "GITHUB_TOKEN": "..." }
-    }
-  }
-}
-```
-
-</div>
-
-<div>
-
-### Що тепер може агент
-
-<div class="space-y-2 mt-2 text-sm">
-
-<div v-click class="p-2 bg-white bg-opacity-5 rounded">
-  💬 <em>"Подивись на структуру таблиці orders і напиши Entity"</em>
-  <div class="text-xs opacity-50 mt-1">→ читає БД → пише правильний PHP-клас</div>
-</div>
-
-<div v-click class="p-2 bg-white bg-opacity-5 rounded">
-  💬 <em>"Створи PR з описом з тікету #234"</em>
-  <div class="text-xs opacity-50 mt-1">→ читає GitHub issue → пише опис → відкриває PR</div>
-</div>
-
-<div v-click class="p-2 bg-white bg-opacity-5 rounded">
-  💬 <em>"Знайди всі запити де немає індексів"</em>
-  <div class="text-xs opacity-50 mt-1">→ аналізує схему БД → дає рекомендації</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 ---
 
 # Context7 — актуальна документація в контексті
 
 MCP-сервер який підтягує **свіжу документацію** будь-якої бібліотеки прямо в контекст агента.
 
-<div class="grid grid-cols-2 gap-8 mt-4">
+<div class="grid grid-cols-2 gap-8 mt-4 items-start">
 
 <div>
 
@@ -1079,37 +1018,30 @@ MCP-сервер який підтягує **свіжу документацію
 - AI навчений на даних до певної дати
 - Знає старі API, яких вже немає
 - Галюцинує методи і параметри
-- `React 18` → AI відповідає про `React 16`
 
 </v-clicks>
+
+<div v-click class="mt-3 text-xs opacity-40">
+
+<a href="https://context7.com" target="_blank">context7.com</a> · 70 887 бібліотек
+
+</div>
+
+<div v-click class="mt-3 p-2 bg-white bg-opacity-5 rounded-lg text-xs">
+
+VS Code Copilot: вбудована тула <code>#fetch &lt;url&gt;</code> — AI сам витягує і парсить сторінку доки за посиланням
+
+</div>
+
+
 
 </div>
 
 <div>
 
-### З Context7
-
-<v-clicks>
-
-- Агент запитує актуальну документацію в реальному часі
-- Завжди правильна версія і синтаксис
-- Підтримує тисячі бібліотек
-
-</v-clicks>
-
-<div v-click class="mt-4 p-3 bg-blue-500 bg-opacity-10 rounded-lg text-xs font-mono border border-blue-500 border-opacity-20">
-
-use context7 mcp to get docs for react 19
+<img src="/img/context7.png" class="w-full rounded-lg shadow-lg" />
 
 </div>
-
-</div>
-
-</div>
-
-<div v-click class="mt-4 text-xs opacity-40 text-right">
-
-<a href="https://context7.com" target="_blank">context7.com</a>
 
 </div>
 
