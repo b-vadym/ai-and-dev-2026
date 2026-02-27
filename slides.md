@@ -624,12 +624,22 @@ Rule/Instruction каже "tabs", старий код — "spaces". AI не зн
 
 </div>
 
-<div>
+<div class="flex flex-col gap-3 text-sm mt-3">
 
-<div v-click class="mt-3 p-2 bg-yellow-500 bg-opacity-10 rounded-lg text-xs">
+<div class="p-3 bg-yellow-500 bg-opacity-10 rounded-lg border border-yellow-500 border-opacity-20">
+  💬 "Виправ баг" → агент переписав 5 файлів і "покращив" архітектуру
+</div>
 
-💡 "Попросив додати кнопку — агент відрефакторив пів проекту і переписав роутинг"
+<div class="p-3 bg-yellow-500 bg-opacity-10 rounded-lg border border-yellow-500 border-opacity-20">
+  💬 "Напиши тест" → агент змінив реалізацію щоб тест просто пройшов
+</div>
 
+<div class="p-3 bg-yellow-500 bg-opacity-10 rounded-lg border border-yellow-500 border-opacity-20">
+  💬 "Додай кнопку" → агент відрефакторив пів проекту і переписав роутинг
+</div>
+
+<div class="p-3 bg-red-500 bg-opacity-10 rounded-lg border border-red-500 border-opacity-20 text-xs opacity-70">
+  ⚠️ Коміт торкнувся 30 файлів замість 2-3 — класична ознака drift
 </div>
 
 </div>
