@@ -203,49 +203,47 @@ transition: fade
 
 # Де дивитися рейтинги
 
-<div class="grid grid-cols-2 gap-12 mt-8">
-
-<div>
-
-### LMArena (arena.ai)
+<div class="mt-8 max-w-2xl mx-auto flex flex-col gap-3">
 
 <v-clicks>
 
-- "Сліпе" порівняння моделей людьми
-- ELO-рейтинг (як у шахах)
-- Людина бачить 2 відповіді — обирає кращу
-- Не знаючи яка модель яка
-- Найоб'єктивніший рейтинг
+<div class="flex items-center gap-4 p-4 bg-white bg-opacity-5 rounded-xl">
+  <span class="text-2xl">🏟️</span>
+  <div class="flex-1">
+    <span class="font-semibold">LMArena</span>
+    <span class="opacity-60 ml-2 text-sm">— сліпе порівняння моделей людьми, ELO-рейтинг</span>
+  </div>
+  <a href="https://arena.ai" target="_blank" class="text-xs opacity-40 hover:opacity-70">arena.ai</a>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-white bg-opacity-5 rounded-xl">
+  <span class="text-2xl">🐛</span>
+  <div class="flex-1">
+    <span class="font-semibold">SWE-bench</span>
+    <span class="opacity-60 ml-2 text-sm">— реальні GitHub issues, агент має знайти і зафіксити баг</span>
+  </div>
+  <a href="https://swebench.com" target="_blank" class="text-xs opacity-40 hover:opacity-70">swebench.com</a>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-white bg-opacity-5 rounded-xl">
+  <span class="text-2xl">📊</span>
+  <div class="flex-1">
+    <span class="font-semibold">Aider Polyglot Leaderboard</span>
+    <span class="opacity-60 ml-2 text-sm">— coding benchmark по кількох мовах</span>
+  </div>
+  <a href="https://aider.chat/docs/leaderboards/" target="_blank" class="text-xs opacity-40 hover:opacity-70">aider.chat</a>
+</div>
+
+<div class="flex items-center gap-4 p-4 bg-white bg-opacity-5 rounded-xl">
+  <span class="text-2xl">⚡</span>
+  <div class="flex-1">
+    <span class="font-semibold">LiveCodeBench</span>
+    <span class="opacity-60 ml-2 text-sm">— свіжі задачі з LeetCode/Codeforces, без витоку в тренінг</span>
+  </div>
+  <a href="https://livecodebench.github.io" target="_blank" class="text-xs opacity-40 hover:opacity-70">livecodebench.github.io</a>
+</div>
 
 </v-clicks>
-
-<!-- Тут можна вставити скріншот arena.ai -->
-
-</div>
-
-<div>
-
-### SWE-bench
-
-<v-clicks>
-
-- Бенчмарк спеціально для коду
-- Реальні GitHub issues як завдання
-- Агент має знайти баг і зафіксити
-- Вимірює end-to-end здатність
-- Найрелевантніший для розробників
-
-</v-clicks>
-
-<!-- Тут можна вставити скріншот swebench.com -->
-
-</div>
-
-</div>
-
-<div class="mt-6 text-sm opacity-60 text-center">
-
-Також: Aider Polyglot Leaderboard, HumanEval, MMLU, LiveCodeBench
 
 </div>
 
