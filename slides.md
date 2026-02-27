@@ -251,6 +251,22 @@ layout: center
 class: text-center
 ---
 
+# Топ моделей для коду · Лютий 2026
+
+<div class="flex flex-col items-center mt-2">
+
+<img src="/img/arena-leaderboard.png" class="rounded-lg" style="max-height: 420px;" />
+
+<div class="text-xs opacity-30 mt-3">
+  <a href="https://arena.ai/uk/leaderboard/code/webdev" target="_blank">arena.ai/leaderboard/code/webdev</a> · Feb 24, 2026 · 171 212 votes · 46 models
+</div>
+
+</div>
+
+---
+class: text-center
+---
+
 # Які бувають агенти для розробки?
 
 <div class="grid grid-cols-2 gap-6 mt-8 text-left max-w-3xl mx-auto">
