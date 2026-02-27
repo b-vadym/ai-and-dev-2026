@@ -1501,6 +1501,165 @@ layout: section
 transition: fade
 ---
 
+# Spec-Driven Development
+
+---
+layout: center
+---
+
+# Spec-Driven Development (SDD)
+
+<div class="grid grid-cols-2 gap-8 mt-6">
+
+<div>
+
+### Що це?
+
+<v-clicks>
+
+- Специфікації — **головний артефакт**, а не код
+- Спочатку пишемо **що** будуємо, потім агент пише **як**
+- AI генерує код із spec-файлів, а не з голови
+
+</v-clicks>
+
+</div>
+
+<div>
+
+### Три рівні зрілості
+
+<v-clicks>
+
+<div class="p-2 my-2 bg-blue-500 bg-opacity-10 rounded-lg text-sm">
+
+**Spec-first** — spec для поточної задачі, потім кодуємо
+
+</div>
+
+<div class="p-2 my-2 bg-purple-500 bg-opacity-10 rounded-lg text-sm">
+
+**Spec-anchored** — spec живе поряд із кодом, оновлюється разом
+
+</div>
+
+<div class="p-2 my-2 bg-green-500 bg-opacity-10 rounded-lg text-sm">
+
+**Spec-as-source** — код auto-generated, spec — єдина правда
+
+</div>
+
+</v-clicks>
+
+</div>
+
+</div>
+
+<v-click>
+
+<div class="mt-6 p-3 bg-white bg-opacity-5 rounded-xl border border-gray-500 border-opacity-20 text-sm">
+
+**Типовий spec включає:** вимоги (user stories + acceptance criteria) · архітектурний дизайн · задачі з трейсабілітю · memory bank із технічними стандартами проекту
+
+</div>
+
+</v-click>
+
+<!--
+SDD — це методологія, де ми виносимо "що будуємо" у структурований документ до того, як агент починає писати код.
+Три рівні: від "один раз написали перед задачею" до "код взагалі не тримаємо вручну, тільки specs".
+Memory bank — спільний контекст для всіх сесій: принципи архітектури, стандарти, рішення.
+Критика від Birgitta Böckeler (ThoughtWorks): агенти часто ігнорують spec навіть при великому контексті — тобто це не срібна куля.
+-->
+
+---
+
+# SDD: Інструменти
+
+<div class="grid grid-cols-2 gap-6 mt-4">
+
+<div>
+
+<div class="p-3 bg-white bg-opacity-5 rounded-lg mb-3">
+
+**[Spec Kit](https://github.com/github/spec-kit)** · GitHub · ★ 72.5k
+
+<div class="text-sm opacity-70 mt-1">
+
+CLI-інструмент: `specify init` → constitution → spec → plan → tasks → implement. Підтримує Claude Code, Copilot, Cursor та 17+ інших.
+
+</div>
+
+</div>
+
+<div class="p-3 bg-white bg-opacity-5 rounded-lg mb-3">
+
+**[OpenSpec](https://github.com/Fission-AI/OpenSpec)** · Fission AI · ★ 26.2k
+
+<div class="text-sm opacity-70 mt-1">
+
+Легковагий spec-шар поверх будь-якого AI-асистента. `/opsx:propose` → `/opsx:apply` → `/opsx:archive`. Без прив'язки до IDE.
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<div class="p-3 bg-white bg-opacity-5 rounded-lg mb-3">
+
+**[BMAD Method](https://github.com/bmad-code-org/BMAD-METHOD)** · ★ 38.3k
+
+<div class="text-sm opacity-70 mt-1">
+
+Agile AI-фреймворк: 12+ спеціалізованих агентів (PM, Architect, Dev, UX). 34+ вбудовані workflows. Від брейнштормінгу до деплою.
+
+</div>
+
+</div>
+
+<div class="p-3 bg-white bg-opacity-5 rounded-lg mb-3">
+
+**[Kiro](https://kiro.dev)** · AWS · IDE
+
+<div class="text-sm opacity-70 mt-1">
+
+Requirements → Design → Tasks прямо у VS Code. Steering-файли + Agent Hooks для автоматизації. Огляд на [dou.ua](https://dou.ua/forums/topic/54739/).
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<v-click>
+
+<div class="mt-2 p-3 bg-yellow-500 bg-opacity-10 rounded-lg text-sm">
+
+**Корисне читання:** [martinfowler.com — SDD: 3 Tools Examined](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) — критичний розбір Birgitta Böckeler (ThoughtWorks)
+
+</div>
+
+</v-click>
+
+<!--
+Чотири інструменти, що реалізують SDD по-різному:
+Spec Kit від GitHub — найпопулярніший (72k зірок), але потребує окремого CLI і досить жорсткий у структурі.
+OpenSpec — більш гнучкий, ітеративний, без прив'язки до IDE — для команд що вже мають свої інструменти.
+BMAD — найповніший: ціла "команда" агентів з ролями. Добре для складних продуктів.
+Kiro від AWS — IDE-підхід, огляд є на DOU.
+Böckeler застерігає: extensive markdown review може бути важчим за звичайний code review. Паралелі з Model-Driven Development 2000-х.
+-->
+
+---
+layout: section
+transition: fade
+---
+
 # Скільки це коштує?
 
 Ціни, підписки
