@@ -786,7 +786,7 @@ layout: section
 <div class="grid grid-cols-2 gap-8 mt-4 items-center">
 
 <div class="flex flex-col items-center">
-  <img src="/img/function-calling.png" class="max-h-[45vh] object-contain rounded-lg" />
+  <img src="/img/function-calling.png" class="max-h-[40vh] object-contain rounded-lg" />
   <div class="text-xs opacity-60 mt-2"><a href="https://platform.openai.com/docs/guides/function-calling" target="_blank">platform.openai.com — Function Calling</a></div>
 </div>
 
