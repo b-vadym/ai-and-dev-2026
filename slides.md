@@ -1652,25 +1652,30 @@ layout: center
 
 ### Підписка / Premium Requests
 
-Фіксована ціна, ліміт запитів
+Фіксована ціна, ліміт запитів на місяць
 
 - **GitHub Copilot** — $10–39/міс
-- **Cursor Pro** — $20-60-200/міс
-- **Claude Code** — $20-100-200/міс
+- **Cursor Pro** — $20–60–200/міс
+- **Claude Code** — $20–100–200/міс
+
+<div class="mt-4 p-3 bg-blue-500 bg-opacity-10 rounded text-sm">
+При вичерпанні ліміту — throttling або перехід на pay-per-use
+</div>
 
 </div>
 
-<div class="p-5 bg-white bg-opacity-5 rounded-lg border border-green-500 border-opacity-30">
+<div class="p-5 bg-white bg-opacity-5 rounded-lg border border-green-500 border-opacity-30 text-sm">
 
 ### Pay-per-token (API)
 
-Платите за кожен токен
+Платите за кожен токен <span class="opacity-50 text-xs">/ ціни per 1M tokens</span>
 
 | Модель | Input | Output |
 |---|---|---|
+| **Claude Opus 4.6** | $5 | $25 |
 | Claude Sonnet 4.6 | $3 | $15 |
-| GPT-5 | $1.25 | $10 |
-| Gemini 2.5 Pro | $1.25 | $10 |
+| GPT-5.3 Codex | $1.75 | $14 |
+| Gemini 3 Pro | $2.00 | $12 |
 | Gemini 2.5 Flash | $0.15 | $0.60 |
 | DeepSeek V3 | $0.27 | $1.10 |
 
