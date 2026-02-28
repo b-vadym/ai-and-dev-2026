@@ -549,7 +549,7 @@ layout: center
 
 
 <div class="flex flex-col items-center mt-4">
-  <img src="/img/context-rot.png" class="max-h-[38vh] object-contain rounded-lg" />
+  <img src="/img/context-rot.png" class="max-h-[28vh] object-contain rounded-lg" />
   <div class="text-xs opacity-30 mt-2"><a href="https://research.trychroma.com/context-rot" target="_blank">research.trychroma.com/context-rot</a></div>
 </div>
 
