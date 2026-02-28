@@ -290,6 +290,7 @@ class: text-center
 - **OpenAI Codex CLI** — термінальний агент від OpenAI
 - **Aider** — open source, будь-яка модель
 - **Gemini CLI** — безкоштовний, 1M контекст
+- **OpenCode** — open source CLI-агент, будь-яка модель
 
 </div>
 
