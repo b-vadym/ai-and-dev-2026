@@ -1785,8 +1785,7 @@ transition: fade
 graph LR
     Dev["Розробник<br/>відкриває MR"] --> CI["GitLab CI<br/>тригер: manual"]
     CI --> Script["bin/claude-mr-review<br/>shell script"]
-    Script --> Diff["git diff<br/>origin/main...HEAD"]
-    Diff --> Claude["claude -p '/review ...'<br/>claude-sonnet-4-6"]
+    Script --> Claude["claude -p '/review ...'<br/>claude-sonnet-4-6"]
     Claude --> Comment["glab mr note<br/>коментар в MR"]
     Comment --> Dev2["Розробник<br/>читає фідбек"]
 ```
@@ -1824,7 +1823,7 @@ claude-mr-review:
 
 <div v-click class="mt-2 text-xs opacity-60">
 
-`GIT_DEPTH: 0` — обов'язково, shallow clone зламає git diff
+`GIT_DEPTH: 0` — обов'язково, Claude Code потребує повну git-історію
 
 </div>
 
@@ -1834,25 +1833,20 @@ claude-mr-review:
 
 ---
 
-# Реалізація: три кроки скрипта
+# Реалізація: два кроки скрипта
 
 <div class="grid grid-cols-2 gap-8 mt-4">
 
 <div>
 
 ```bash
-# 1. Отримуємо зміни MR
-git fetch origin "${TARGET_BRANCH}"
-CHANGED=$(git diff --name-only \
-  "origin/${TARGET_BRANCH}...HEAD")
-
-# 2. Claude читає diff і пише рев'ю
+# 1. Claude Code робить рев'ю MR
 claude -p "/review origin/${TARGET_BRANCH}...HEAD" \
   --model claude-sonnet-4-6 \
   --output-format text \
   > "$REVIEW_FILE"
 
-# 3. Публікуємо коментар в MR
+# 2. Публікуємо коментар в MR
 glab mr note "${CI_MERGE_REQUEST_IID}" \
   --message "## Claude Code Review\n${REVIEW}"
 ```
@@ -1866,8 +1860,8 @@ glab mr note "${CI_MERGE_REQUEST_IID}" \
 <v-clicks>
 
 - **`claude -p "/review ..."`** — Claude Code в headless-режимі, один запуск без інтерактиву
-- **`origin/main...HEAD`** — тільки зміни цього MR, не весь проект
-- **`CLAUDE.md` в репо** — Claude автоматично читає його: знає Symfony 7, API Platform, конвенції Entity, стиль тестів
+- **`origin/main...HEAD`** — Claude Code сам читає git-історію і визначає зміни MR
+- **`CLAUDE.md` в репо** — Claude автоматично читає його: знає архітектуру, конвенції, стиль тестів
 - Без `CLAUDE.md` — generic рев'ю; з ним — специфічне для проекту
 
 </v-clicks>
@@ -1880,6 +1874,39 @@ glab mr note "${CI_MERGE_REQUEST_IID}" \
 
 </div>
 
+</div>
+
+---
+
+# AI Code Review: живе в продакшні
+
+<div class="grid grid-cols-3 gap-6 mt-8">
+
+<div class="p-5 bg-white bg-opacity-5 rounded-xl border border-blue-500 border-opacity-30">
+  <div class="text-2xl mb-3">🏨</div>
+  <div class="font-bold text-lg">ZenStay</div>
+  <div class="text-sm opacity-60 mt-2">GitLab CI · Claude Code</div>
+  <div class="mt-3 text-xs px-2 py-1 bg-green-500 bg-opacity-20 rounded-full inline-block text-green-400">✓ Активно</div>
+</div>
+
+<div class="p-5 bg-white bg-opacity-5 rounded-xl border border-blue-500 border-opacity-30">
+  <div class="text-2xl mb-3">🏥</div>
+  <div class="font-bold text-lg">HealUp</div>
+  <div class="text-sm opacity-60 mt-2">GitLab CI · Claude Code</div>
+  <div class="mt-3 text-xs px-2 py-1 bg-green-500 bg-opacity-20 rounded-full inline-block text-green-400">✓ Активно</div>
+</div>
+
+<div class="p-5 bg-white bg-opacity-5 rounded-xl border border-blue-500 border-opacity-30">
+  <div class="text-2xl mb-3">📋</div>
+  <div class="font-bold text-lg">Doc2Bid</div>
+  <div class="text-sm opacity-60 mt-2">GitLab CI · Claude Code</div>
+  <div class="mt-3 text-xs px-2 py-1 bg-green-500 bg-opacity-20 rounded-full inline-block text-green-400">✓ Активно</div>
+</div>
+
+</div>
+
+<div v-click class="mt-8 p-4 bg-blue-500 bg-opacity-10 rounded-xl border border-blue-500 border-opacity-20 text-sm">
+  <span class="font-semibold">Наступний крок:</span> поступове розширення на інші проекти компанії — pipeline вже відпрацьований і готовий до тиражування
 </div>
 
 ---
