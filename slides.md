@@ -587,7 +587,7 @@ layout: center
 
 **⚔️ Context Clash**
 
-Rule/Instruction каже "tabs", старий код — "spaces". AI не знає кому вірити — і мікширує обидва.
+Rule/Instruction каже "spaces", старий код — "tabs". AI не знає кому вірити — і міксує обидва.
 
 </div>
 
