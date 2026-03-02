@@ -1453,6 +1453,27 @@ npx skills add slidevjs/slidev
 </div>
 
 ---
+
+# Plan Mode
+
+Cursor, GitHub Copilot, Claude Code — всі мають Plan Mode
+
+<v-clicks>
+
+- Агент **досліджує кодбейс** і ставить уточнюючі питання
+- Генерує **детальний план** що і навіщо змінить — але нічого не чіпає
+- Ти переглядаєш, коригуєш, схвалюєш
+- Тільки після цього агент переходить до виконання
+
+</v-clicks>
+
+<div v-click class="mt-8 p-3 bg-green-500 bg-opacity-10 rounded-lg text-sm border border-green-500 border-opacity-20">
+
+💡 Checkpoint між "думати" і "діяти" — агент не робить 50 кроків у хибному напрямку перш ніж ти помітиш
+
+</div>
+
+---
 layout: section
 transition: fade
 ---
